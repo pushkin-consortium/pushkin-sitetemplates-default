@@ -1,4 +1,4 @@
-import pushkinComponent6386345c37964b61be0779f7f8711d4e from 'pushkinComponent6386345c37964b61be0779f7f8711d4e';
+import pushkinComponent487efa33727e461d874fc2a49d3ed05f from 'pushkinComponent487efa33727e461d874fc2a49d3ed05f';
 export default [
-	{ fullName: 'newexp Experiment', shortName: 'newexp', module: pushkinComponent6386345c37964b61be0779f7f8711d4e, logo: 'logo512.png', tagline: 'Be a citizen scientist! Try this quiz.', duration: '' },
+	{ fullName: 'newexp Experiment', shortName: 'newexp', module: pushkinComponent487efa33727e461d874fc2a49d3ed05f, logo: 'logo512.png', tagline: 'Be a citizen scientist! Try this quiz.', duration: '' },
 ];
