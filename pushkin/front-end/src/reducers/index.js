@@ -10,6 +10,5 @@ import error from './error';
 //import nextpage from './nextpage';
 
 export default combineReducers({
-  auth: authReducer,
   error: error
 });
