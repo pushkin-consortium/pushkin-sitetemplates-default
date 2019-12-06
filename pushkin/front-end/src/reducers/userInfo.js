@@ -1,4 +1,4 @@
-import { GOT_SESSION_USER, GET_SESSION_USER } from '..actions/userInfo';
+import { GOT_SESSION_USER, GET_SESSION_USER } from '../actions/userInfo';
 
 const initialState = {
   userID: null

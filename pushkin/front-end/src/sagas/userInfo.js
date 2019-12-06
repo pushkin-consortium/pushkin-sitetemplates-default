@@ -1,4 +1,4 @@
-import { GOT_SESSION_USER, GET_SESSION_USER } from '..actions/userInfo';
+import { GOT_SESSION_USER, GET_SESSION_USER } from '../actions/userInfo';
 import { put, takeEvery, takeLatest, all } from 'redux-saga/effects';
 import session from '../utils/session';
 
