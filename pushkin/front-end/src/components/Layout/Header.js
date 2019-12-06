@@ -1,8 +1,12 @@
 // ./src/components/Layout/Navigation.js
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+
+//redux
+import { connect } from 'react-redux';
+import { getSessionUser } from '../../actions/userInfo';
 
 //stylin
 import * as b from 'react-bootstrap';
@@ -16,8 +20,28 @@ import Avatar from '../Avatar.js';
 import { CONFIG } from '../../config';
 import { useAuth0 } from '../../utils/react-auth0-spa';
 
+const mapStateToProps = state => {
+  return {
+    userID: state.userInfo.userID
+  };
+};
+
 const Header = props => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+
+  const [userID, setUserID] = useState();
+
+  useEffect(() => {
+    console.log('Using effect');
+    let tempID;
+    isAuthenticated
+      ? (tempID = null)
+      : props.userID
+      ? (tempID = props.userID)
+      : props.dispatch(getSessionUser());
+    setUserID(tempID);
+    console.log(tempID);
+  }, [isAuthenticated, props.userID]);
 
   return (
     <div id="App">
@@ -77,4 +101,4 @@ const Header = props => {
   );
 };
 
-export default Header;
+export default connect(mapStateToProps)(Header);

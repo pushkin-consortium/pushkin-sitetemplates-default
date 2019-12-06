@@ -7,6 +7,7 @@ const initialState = {
 export default function error(state = initialState, action) {
   switch (action.type) {
     case GOT_SESSION_USER:
+      console.log(action.id);
       return {
         ...state,
         userID: action.id

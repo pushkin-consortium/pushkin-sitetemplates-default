@@ -26,6 +26,7 @@ import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from './utils/react-auth0-spa';
 import App from './App';
 import { CONFIG } from './config';
+import { handleCookie } from './sagas/userInfo';
 
 import { createBrowserHistory } from 'history';
 const customHistory = createBrowserHistory();
@@ -33,6 +34,7 @@ const customHistory = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
+//sagaMiddleware.run(handleCookie)
 
 // A function that routes the user to the right place
 // after login
