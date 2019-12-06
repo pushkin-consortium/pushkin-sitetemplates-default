@@ -16,7 +16,7 @@ import Avatar from '../Avatar.js';
 import { CONFIG } from '../../config';
 import { useAuth0 } from '../../utils/react-auth0-spa';
 
-const Header = () => {
+const Header = props => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   return (
@@ -58,6 +58,7 @@ const Header = () => {
                         </Fragment>
                       )
                     ) : null}
+                    User={props.userID}
                   </b.Nav>
                 </b.Navbar.Collapse>
               </b.Navbar>

@@ -3,7 +3,7 @@ import Header from '../components/Layout/Header';
 
 const mapStateToProps = state => {
   return {
-    user: state.auth.user
+    user: state.userInfo.userID
   };
 };
 

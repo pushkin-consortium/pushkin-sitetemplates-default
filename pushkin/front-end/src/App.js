@@ -7,7 +7,8 @@ import logo from './logo.svg';
 import './App.css';
 
 //import page components
-import HeaderContainer from './components/Layout/Header';
+//import HeaderContainer from './components/Layout/Header';
+import HeaderContainer from './components/containers/HeaderContainer';
 import Footer from './components/Layout/Footer';
 import TakeQuiz from './components/QuizTile/TakeQuiz';
 import Dummy from './components/dummy';
