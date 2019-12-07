@@ -1,6 +1,6 @@
-FROM nginx
-COPY ./build/ /var/www/html/
-COPY dockerNginx.conf /etc/nginx/nginx.conf
-COPY dockerStart.sh /etc/nginx/start.sh
-WORKDIR /etc/nginx
-ENTRYPOINT ["/bin/bash", "start.sh"]
+FROM node:latest
+RUN apt-get update && apt-get install -y netcat
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+CMD npm run build
+CMD npm start

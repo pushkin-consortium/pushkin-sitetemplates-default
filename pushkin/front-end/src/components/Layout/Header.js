@@ -27,21 +27,19 @@ const mapStateToProps = state => {
 };
 
 const Header = props => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
 
   const [userID, setUserID] = useState();
 
   useEffect(() => {
-    console.log('Using effect');
     let tempID;
     isAuthenticated
-      ? (tempID = null)
+      ? (tempID = user)
       : props.userID
       ? (tempID = props.userID)
       : props.dispatch(getSessionUser());
     setUserID(tempID);
-    console.log(tempID);
-  }, [isAuthenticated, props.userID]);
+  }, [isAuthenticated, props.userID, user, userID]);
 
   return (
     <div id="App">
@@ -82,7 +80,7 @@ const Header = props => {
                         </Fragment>
                       )
                     ) : null}
-                    User={props.userID}
+                    User={userID}
                   </b.Nav>
                 </b.Navbar.Collapse>
               </b.Navbar>
