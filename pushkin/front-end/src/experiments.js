@@ -1,9 +1,9 @@
-import pushkinComponentc08c0bd827e7412e80244ccd76f45e61 from 'pushkinComponentc08c0bd827e7412e80244ccd76f45e61';
+import pushkinComponent3b476f905d2e48e79a7aba43bc883f12 from 'pushkinComponent3b476f905d2e48e79a7aba43bc883f12';
 export default [
   {
     fullName: 'newexp Experiment',
     shortName: 'newexp',
-    module: pushkinComponentc08c0bd827e7412e80244ccd76f45e61,
+    module: pushkinComponent3b476f905d2e48e79a7aba43bc883f12,
     logo: 'logo512.png',
     tagline: 'Be a citizen scientist! Try this quiz.',
     duration: ''
