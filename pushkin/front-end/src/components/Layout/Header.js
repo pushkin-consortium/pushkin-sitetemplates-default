@@ -1,8 +1,13 @@
 // ./src/components/Layout/Navigation.js
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+
+//redux
+import { connect } from 'react-redux';
+import { getSessionUser, setUserID } from '../../actions/userInfo';
 
 //stylin
 import * as b from 'react-bootstrap';
@@ -16,8 +21,37 @@ import Avatar from '../Avatar.js';
 import { CONFIG } from '../../config';
 import { useAuth0 } from '../../utils/react-auth0-spa';
 
-const Header = () => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+const mapStateToProps = state => {
+  return {
+    userID: state.userInfo.userID
+  };
+};
+
+const Header = props => {
+  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+  if (!CONFIG.useAuth) {
+    const isAuthenticated = false;
+    const user = null;
+  }
+
+  //const [userID, setUserID] = useState();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      if (props.userID != user) {
+        //Either we just logged in, or the page refreshed. Anyway, update.
+        props.dispatch(setUserID(user));
+      }
+    } else {
+      // Not authenticated
+      if (!props.userID) {
+        // No ID in redux store. Either a) this is a new user, b) the browser refreshed, or
+        // c) user just logged out of auth0 (which triggers deleting the ID from redux store)
+        // Get a new ID from a session cookie.
+        props.dispatch(getSessionUser());
+      }
+    }
+  }, [isAuthenticated, props.userID, user]);
 
   return (
     <div id="App">
@@ -53,11 +87,19 @@ const Header = () => {
                           <LinkContainer to="/Dashboard">
                             <b.Nav.Link>Dashboard</b.Nav.Link>
                           </LinkContainer>
-                          <b.Button onClick={() => logout()}>Logout</b.Button>
+                          <b.Button
+                            onClick={() => {
+                              logout();
+                              props.dispatch(setUserID(null));
+                            }}
+                          >
+                            Logout
+                          </b.Button>
                           <Avatar />
                         </Fragment>
                       )
                     ) : null}
+                    User={props.userID}
                   </b.Nav>
                 </b.Navbar.Collapse>
               </b.Navbar>
@@ -76,4 +118,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(connect(mapStateToProps)(Header));

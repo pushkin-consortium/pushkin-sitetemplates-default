@@ -7,14 +7,14 @@ import 'react-app-polyfill/stable';
 // Basic react imports
 import React from 'react';
 import { render } from 'react-dom';
-import { Route, Link, Redirect, Switch, Router as Router } from 'react-router-dom';
+import { Route, Link, Redirect, Switch, Router } from 'react-router-dom';
 
 // redux
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-//import rootReducer from './reducers/index';
-//import rootSaga from './sagas/index';
+import rootReducer from './reducers/index';
+import rootSaga from './sagas/index';
 
 //Stylin
 import './index.css'; // drop??
@@ -26,13 +26,15 @@ import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from './utils/react-auth0-spa';
 import App from './App';
 import { CONFIG } from './config';
+import { handleCookie } from './sagas/userInfo';
 
 import { createBrowserHistory } from 'history';
 const customHistory = createBrowserHistory();
 
-//const sagaMiddleware = createSagaMiddleware();
-//const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
-//sagaMiddleware.run(rootSaga);
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(rootSaga);
+//sagaMiddleware.run(handleCookie)
 
 // A function that routes the user to the right place
 // after login
@@ -52,9 +54,11 @@ render(
     redirect_uri={window.location.origin}
     onRedirectCallback={onRedirectCallback}
   >
-    <Router history={customHistory}>
-      <App />
-    </Router>
+    <Provider store={store}>
+      <Router history={customHistory}>
+        <App />
+      </Router>
+    </Provider>
   </Auth0Provider>,
   document.getElementById('root')
 );

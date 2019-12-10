@@ -2,6 +2,16 @@
 import React, { useState, useEffect, useContext } from 'react';
 import createAuth0Client from '@auth0/auth0-spa-js';
 
+//encryption
+import { CONFIG } from '../config.js';
+import nodeRSA from 'node-rsa';
+
+var crypto = require('crypto');
+var Buffer = require('buffer').Buffer;
+
+//const key = nodeRSA({ b: 64 });
+//key.importKey(CONFIG.publickey, 'pkcs8-public-pem');
+
 const DEFAULT_REDIRECT_CALLBACK = () =>
   window.history.replaceState({}, document.title, window.location.pathname);
 
@@ -33,8 +43,12 @@ export const Auth0Provider = ({
       setIsAuthenticated(isAuthenticated);
 
       if (isAuthenticated) {
-        const user = await auth0FromHook.getUser();
-        setUser(user);
+        const claims = await auth0FromHook.getIdTokenClaims();
+        const encrypted = await crypto
+          .publicEncrypt(CONFIG.publickey, Buffer.from(claims.sub))
+          .toString('base64');
+        //const encrypted = await key.encrypt(claims.sub, 'hex');
+        setUser(encrypted);
       }
 
       setLoading(false);
@@ -52,18 +66,26 @@ export const Auth0Provider = ({
     } finally {
       setPopupOpen(false);
     }
-    const user = await auth0Client.getUser();
-    setUser(user);
+    const claims = await auth0Client.getIdTokenClaims();
+    const encrypted = crypto
+      .publicEncrypt(CONFIG.publickey, Buffer.from(claims.sub))
+      .toString('base64');
+    //const encrypted = await key.encrypt(claims.sub, 'hex');
+    setUser(encrypted);
     setIsAuthenticated(true);
   };
 
   const handleRedirectCallback = async () => {
     setLoading(true);
     await auth0Client.handleRedirectCallback();
-    const user = await auth0Client.getUser();
+    const claims = await auth0Client.getIdTokenClaims();
     setLoading(false);
     setIsAuthenticated(true);
-    setUser(user);
+    const encrypted = crypto
+      .publicEncrypt(CONFIG.publickey, Buffer.from(claims.sub))
+      .toString('base64');
+    //const encrypted = await key.encrypt(claims.sub, 'hex');
+    setUser(encrypted);
   };
   return (
     <Auth0Context.Provider
