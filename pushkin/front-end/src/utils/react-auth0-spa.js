@@ -6,8 +6,11 @@ import createAuth0Client from '@auth0/auth0-spa-js';
 import { CONFIG } from '../config.js';
 import nodeRSA from 'node-rsa';
 
-const key = nodeRSA({ b: 512 });
-key.importKey(CONFIG.publickey, 'pkcs8-public-pem');
+var crypto = require('crypto');
+var Buffer = require('buffer').Buffer;
+
+//const key = nodeRSA({ b: 64 });
+//key.importKey(CONFIG.publickey, 'pkcs8-public-pem');
 
 const DEFAULT_REDIRECT_CALLBACK = () =>
   window.history.replaceState({}, document.title, window.location.pathname);
@@ -41,7 +44,10 @@ export const Auth0Provider = ({
 
       if (isAuthenticated) {
         const claims = await auth0FromHook.getIdTokenClaims();
-        const encrypted = await key.encrypt(claims.sub, 'hex');
+        const encrypted = await crypto
+          .publicEncrypt(CONFIG.publickey, Buffer.from(claims.sub))
+          .toString('base64');
+        //const encrypted = await key.encrypt(claims.sub, 'hex');
         setUser(encrypted);
       }
 
@@ -61,7 +67,10 @@ export const Auth0Provider = ({
       setPopupOpen(false);
     }
     const claims = await auth0Client.getIdTokenClaims();
-    const encrypted = await key.encrypt(claims.sub, 'hex');
+    const encrypted = crypto
+      .publicEncrypt(CONFIG.publickey, Buffer.from(claims.sub))
+      .toString('base64');
+    //const encrypted = await key.encrypt(claims.sub, 'hex');
     setUser(encrypted);
     setIsAuthenticated(true);
   };
@@ -72,7 +81,10 @@ export const Auth0Provider = ({
     const claims = await auth0Client.getIdTokenClaims();
     setLoading(false);
     setIsAuthenticated(true);
-    const encrypted = await key.encrypt(claims.sub, 'hex');
+    const encrypted = crypto
+      .publicEncrypt(CONFIG.publickey, Buffer.from(claims.sub))
+      .toString('base64');
+    //const encrypted = await key.encrypt(claims.sub, 'hex');
     setUser(encrypted);
   };
   return (

@@ -1,4 +1,4 @@
-import { GOT_SESSION_USER, GET_SESSION_USER } from '../actions/userInfo';
+import { GET_SESSION_USER, SET_USER_ID } from '../actions/userInfo';
 
 const initialState = {
   userID: null
@@ -6,8 +6,7 @@ const initialState = {
 
 export default function error(state = initialState, action) {
   switch (action.type) {
-    case GOT_SESSION_USER:
-      console.log(action.id);
+    case SET_USER_ID:
       return {
         ...state,
         userID: action.id
