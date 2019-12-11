@@ -4,13 +4,14 @@ import createAuth0Client from '@auth0/auth0-spa-js';
 
 //encryption
 import { CONFIG } from '../config.js';
-import nodeRSA from 'node-rsa';
 
 var crypto = require('crypto');
-var Buffer = require('buffer').Buffer;
-
-//const key = nodeRSA({ b: 64 });
-//key.importKey(CONFIG.publickey, 'pkcs8-public-pem');
+var sha512 = function(id, salt) {
+  var hash = crypto.createHmac('sha512', salt); /** Hashing algorithm sha512 */
+  hash.update(id);
+  var value = hash.digest('base64');
+  return value;
+};
 
 const DEFAULT_REDIRECT_CALLBACK = () =>
   window.history.replaceState({}, document.title, window.location.pathname);
@@ -44,10 +45,7 @@ export const Auth0Provider = ({
 
       if (isAuthenticated) {
         const claims = await auth0FromHook.getIdTokenClaims();
-        const encrypted = await crypto
-          .publicEncrypt(CONFIG.publickey, Buffer.from(claims.sub))
-          .toString('base64');
-        //const encrypted = await key.encrypt(claims.sub, 'hex');
+        const encrypted = await sha512(claims.sub, CONFIG.salt);
         setUser(encrypted);
       }
 
@@ -67,10 +65,7 @@ export const Auth0Provider = ({
       setPopupOpen(false);
     }
     const claims = await auth0Client.getIdTokenClaims();
-    const encrypted = crypto
-      .publicEncrypt(CONFIG.publickey, Buffer.from(claims.sub))
-      .toString('base64');
-    //const encrypted = await key.encrypt(claims.sub, 'hex');
+    const encrypted = await sha512(claims.sub, CONFIG.salt);
     setUser(encrypted);
     setIsAuthenticated(true);
   };
@@ -81,10 +76,7 @@ export const Auth0Provider = ({
     const claims = await auth0Client.getIdTokenClaims();
     setLoading(false);
     setIsAuthenticated(true);
-    const encrypted = crypto
-      .publicEncrypt(CONFIG.publickey, Buffer.from(claims.sub))
-      .toString('base64');
-    //const encrypted = await key.encrypt(claims.sub, 'hex');
+    const encrypted = await sha512(claims.sub, CONFIG.salt);
     setUser(encrypted);
   };
   return (
