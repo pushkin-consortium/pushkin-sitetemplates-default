@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "pushkin-api": "^1.0.7",
-    "pushkinComponentff529cbe385e4aee8ce6e2d9886fc8f3": "file:tempPackages/pushkinComponentff529cbe385e4aee8ce6e2d9886fc8f3-1.0.0.tgz"
+    "pushkinComponent6b546b3c99c24c0a912578dc8506c65e": "file:tempPackages/pushkinComponent6b546b3c99c24c0a912578dc8506c65e-1.0.0.tgz"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",

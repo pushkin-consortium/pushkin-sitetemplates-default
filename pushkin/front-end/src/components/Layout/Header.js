@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 //redux
 import { connect } from 'react-redux';
-import { getSessionUser, setUserID } from '../../actions/userInfo';
+import { getUser, setUserID } from '../../actions/userInfo';
 
 //stylin
 import * as b from 'react-bootstrap';
@@ -34,24 +34,9 @@ const Header = props => {
     const user = null;
   }
 
-  //const [userID, setUserID] = useState();
-
   useEffect(() => {
-    if (isAuthenticated) {
-      if (props.userID != user) {
-        //Either we just logged in, or the page refreshed. Anyway, update.
-        props.dispatch(setUserID(user));
-      }
-    } else {
-      // Not authenticated
-      if (!props.userID) {
-        // No ID in redux store. Either a) this is a new user, b) the browser refreshed, or
-        // c) user just logged out of auth0 (which triggers deleting the ID from redux store)
-        // Get a new ID from a session cookie.
-        props.dispatch(getSessionUser());
-      }
-    }
-  }, [isAuthenticated, props.userID, user]);
+    props.dispatch(getUser(isAuthenticated, user));
+  }, [isAuthenticated]);
 
   return (
     <div id="App">
