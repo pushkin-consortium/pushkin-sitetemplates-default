@@ -42,8 +42,8 @@ services:
       - '5432:5432'
     volumes:
       - 'test_db_volume:/var/lib/postgresql/data'
-  pushkinworkerf10b46d137e34da294b8cfe321e0bd8b:
-    image: pushkinworkerf10b46d137e34da294b8cfe321e0bd8b
+  pushkinworker8227f6660f1a497a9eb19cc2e697f757:
+    image: pushkinworker8227f6660f1a497a9eb19cc2e697f757
     links:
       - message-queue
       - test_db
