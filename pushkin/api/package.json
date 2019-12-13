@@ -11,8 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "pushkin-api": "^1.0.7",
-    "pushkinComponent3607c563419a403eacb8cce6f198c66a": "file:tempPackages/pushkinComponent3607c563419a403eacb8cce6f198c66a-1.0.0.tgz"
+    "pushkin-api": "^1.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
