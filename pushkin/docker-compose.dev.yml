@@ -42,16 +42,4 @@ services:
       - '5432:5432'
     volumes:
       - 'test_db_volume:/var/lib/postgresql/data'
-  pushkinworker563fa0ff56aa4213ab097d520ca82fb0:
-    image: pushkinworker563fa0ff56aa4213ab097d520ca82fb0
-    links:
-      - message-queue
-      - test_db
-    environment:
-      - 'AMQP_ADDRESS=amqp://message-queue:5672'
-      - DB_USER=postgres
-      - DB_PASS=
-      - DB_URL=test_db
-      - DB_NAME=test_db
-    labels:
-      isPushkinWorker: true
+      
