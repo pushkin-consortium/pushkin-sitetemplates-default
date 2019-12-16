@@ -5,20 +5,19 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 //Styling
 import s from './styles.css';
-import { Row, Col, Image, Card, Media, Button, Table } from 'react-bootstrap';
-import PropTypes from 'prop-types';
+import { Col, Image, Card, Button } from 'react-bootstrap';
+//import PropTypes from 'prop-types';
 
 //Other
 import { CONFIG } from '../../config';
-import Axios from 'axios';
 import * as i from 'react-social-icons';
 
 //unneded imports
 //import * as f from 'react-foundation';
 
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
+//function numberWithCommas(x) {
+//  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+//}
 
 class QuizTile extends React.Component {
   state = {

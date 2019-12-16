@@ -11,7 +11,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-import * as i from 'react-social-icons';
+//import * as i from 'react-social-icons';
 import { Col } from 'react-bootstrap';
 import s from './Footer.css';
 import { CONFIG } from '../../config';

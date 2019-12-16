@@ -1,12 +1,12 @@
 // import React
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 //Styling
 import s from './styles.css';
-import { Row, Col, Image, Card, Media, Button, Table } from 'react-bootstrap';
+//import { Row, Col, Image, Card, Media, Button, Table } from 'react-bootstrap';
+import { Col, Image, Card, Button } from 'react-bootstrap';
 
 //unneeded imports?
 //import * as f from 'react-foundation';
@@ -26,14 +26,14 @@ export function SuggestTile(props) {
           </Card.Header>
           <Card.Body className={s.quizbox}>
             <div className={s.quizImgWrap}>
-              <Link to={props.to}>
+              <LinkContainer to={props.to}>
                 <Image
                   src={props.img}
                   className="img-thumbnail"
                   style={{ backgroundColor: 'transparent', border: 0 }}
                   responsive
                 />
-              </Link>
+              </LinkContainer>
             </div>
             <div className={s.quizText}>
               {props.children}

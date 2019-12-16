@@ -1,4 +1,4 @@
-import { put, takeEvery, all } from 'redux-saga/effects';
+import { all } from 'redux-saga/effects';
 import { getUser } from './userInfo';
 
 const delay = ms => new Promise(res => setTimeout(res, ms));

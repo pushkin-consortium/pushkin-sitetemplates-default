@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 
 //import custom front-end stuff
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
 //import page components
@@ -33,7 +33,7 @@ function App() {
       <Route exact path="/index.html" component={homePage} />
       <Route exact path="/About" component={homePage} />
       <Route exact path="/Dashboard" component={homePage} />
-      <Route exact path="/Feedback" component={Dummy} />
+      <Route exact path="/Feedback" component={homePage} />
       <Route path="/quizzes/:quizName" component={TakeQuiz} />
       <Footer />
     </div>

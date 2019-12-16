@@ -1,12 +1,12 @@
 // react imports
 import React from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Route } from 'react-router-dom';
 
 // styling
 import s from './styles.css';
-import { Row, Col, Image, Card, Media, Button, Table } from 'react-bootstrap'; //  Clearfix,
+//import { Row, Image, Card, Media, Button, Table } from 'react-bootstrap'; //  Clearfix,
+import { Row } from 'react-bootstrap'; //  Clearfix,
 
 // components
 import QuizTile from '../../components/QuizTile';
@@ -19,7 +19,6 @@ const SHOW_TECHNICAL_DIFFICULTIES_MESSAGE = false;
 
 function QuizPage(props) {
   if (!props.children) {
-    const { match } = props;
     return (
       <div id="page-wrap">
         <div>

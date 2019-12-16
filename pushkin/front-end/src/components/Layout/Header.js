@@ -1,8 +1,7 @@
 // ./src/components/Layout/Navigation.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
 //redux
@@ -11,10 +10,10 @@ import { getUser, setUserID } from '../../actions/userInfo';
 
 //stylin
 import * as b from 'react-bootstrap';
-import * as i from 'react-social-icons';
+//import * as i from 'react-social-icons';
 import s from './Header.css';
-import l from './Layout.css';
-import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
+//import l from './Layout.css';
+import { LinkContainer } from 'react-router-bootstrap';
 import Avatar from '../Avatar.js';
 
 //other
