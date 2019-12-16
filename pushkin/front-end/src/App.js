@@ -10,7 +10,6 @@ import './App.css';
 import HeaderContainer from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import TakeQuiz from './components/QuizTile/TakeQuiz';
-import Dummy from './components/dummy';
 
 //import pages
 import homePage from './pages/home/index';
