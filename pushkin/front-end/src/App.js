@@ -14,7 +14,7 @@ import TakeQuiz from './components/QuizTile/TakeQuiz';
 //import pages
 import homePage from './pages/home/index';
 import aboutPage from './pages/about/index';
-import feedbackPage from '.pages/feedback/index';
+import feedbackPage from './pages/feedback/index';
 
 //auth
 import { useAuth0 } from './utils/react-auth0-spa';
@@ -34,7 +34,7 @@ function App() {
       <Route exact path="/index.html" component={homePage} />
       <Route exact path="/About" component={aboutPage} />
       <Route exact path="/Dashboard" component={homePage} />
-      <Route exact path="/Feedback" component={feedback} />
+      <Route exact path="/Feedback" component={feedbackPage} />
       <Route path="/quizzes/:quizName" component={TakeQuiz} />
       <Footer />
     </div>
