@@ -83,7 +83,6 @@ const Header = props => {
                         </Fragment>
                       )
                     ) : null}
-                    User={props.userID}
                   </b.Nav>
                 </b.Navbar.Collapse>
               </b.Navbar>
