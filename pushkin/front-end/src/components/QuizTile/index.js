@@ -1,11 +1,13 @@
 //React
-import React from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 
 //Styling
-import s from './styles.css';
-import { Col, Image, Card, Button } from 'react-bootstrap';
+import styles from './styles.css';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 //import PropTypes from 'prop-types';
 
 //Other
@@ -19,7 +21,7 @@ import * as i from 'react-social-icons';
 //  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 //}
 
-class QuizTile extends React.Component {
+class QuizTile extends Component {
   state = {
     count: null
   };
@@ -68,20 +70,16 @@ class QuizTile extends React.Component {
     return (
       <Col xs={12} sm={6} md={6}>
         <div>
-          <Card bsClass={s.panel}>
-            <Card.Header>
-              <div className={s.headerpadding}>
-                <a className={s.title}>{this.props.title}</a>
-
-                <LinkContainer to={'/quizzes/' + this.props.id}>
-                  <Button bsStyle="danger">Play</Button>
-                </LinkContainer>
+          <Card bsClass={styles.panel}>
+            <Card.Header as="h4">
+              <div className={styles.headerpadding}>
+                <a className={styles.title}>{this.props.title}</a>
               </div>
             </Card.Header>
-            <Card.Body className={s.quizbox}>
-              <div className={s.quizImgWrap}>
+            <Card.Body className={styles.quizbox}>
+              <div className={styles.quizImgWrap}>
                 <LinkContainer to={'/quizzes/' + this.props.id}>
-                  <Image
+                  <Card.Img
                     src={this.props.img}
                     className="img-thumbnail"
                     style={{ backgroundColor: 'transparent', border: 0 }}
@@ -89,9 +87,13 @@ class QuizTile extends React.Component {
                   />
                 </LinkContainer>
               </div>
-              <div className={s.quizText}>
+              <div className={styles.playButton}>
+                <LinkContainer to={'/quizzes/' + this.props.id}>
+                  <Button variant="primary">Play</Button>
+                </LinkContainer>
+              </div>
+              <div className={styles.quizText}>
                 {this.props.children}
-
                 {this.props.duration && (
                   <p>
                     {' '}
@@ -105,7 +107,8 @@ class QuizTile extends React.Component {
                 {this.state.count && (
                   <p> {this.state.count} players so far! </p>
                 )}
-                <span className={s.pad5} target="_blank">
+                
+                <div className={styles.pad5} target="_blank">
                   <i.SocialIcon
                     url={share.facebook}
                     onClick={e => {
@@ -115,8 +118,6 @@ class QuizTile extends React.Component {
                     style={{ height: 30, width: 30 }}
                     target="_blank"
                   />
-                </span>
-                <span className={s.pad5} target="_blank">
                   <i.SocialIcon
                     url={share.twitter}
                     onClick={e => {
@@ -126,25 +127,22 @@ class QuizTile extends React.Component {
                     style={{ height: 30, width: 30 }}
                     target="_blank"
                   />
-                </span>
-                <span className={s.pad5} target="_blank">
                   <i.SocialIcon
                     url={share.email}
                     style={{ height: 30, width: 30 }}
                     target="_blank"
                   />
-                </span>
+                </div>
               </div>
-
               {/* BETA ribbon */}
-              {this.props.beta && (
+              {/* {this.props.beta && (
                 <LinkContainer to={'/quizzes/' + this.props.id}>
-                  <div className={s.ribbon + ' ' + s.ribbonBottomLeft}>
+                  <div className={styles.ribbon + ' ' + styles.ribbonBottomLeft}>
                     {' '}
                     <span>BETA</span>{' '}
                   </div>
                 </LinkContainer>
-              )}
+              )} */}
             </Card.Body>
           </Card>
         </div>
