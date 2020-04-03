@@ -39,18 +39,16 @@ const Header = (props) => {
   }, [isAuthenticated]);
 
   return (
-    <div id="App">
-      <div id="head-wrap" className={s.gray}>
-        <header className={s.header} id="header">
-          <div className={s.navback}>
-            <div className={s.navhead}>
+          <div>
               <Navbar bg="dark" variant="dark" expand="lg">
                 <Navbar.Toggle aria-controls="basic-b.Navbar-b.Nav" />
                 <Navbar.Collapse id="basic-b.Navbar-b.Nav">
-                  <LinkContainer to="/">
+                  <Nav className="mr-auto">
+                    <Nav.Item>
+                    <LinkContainer to="/">
                     <Navbar.Brand>{CONFIG.whoAmI}</Navbar.Brand>
                   </LinkContainer>
-                  <Nav className="mr-auto">
+                    </Nav.Item>
                     <Nav.Item>
                       <LinkContainer to="/">
                         <Nav.Link>Quizzes</Nav.Link>
@@ -95,10 +93,6 @@ const Header = (props) => {
                   </Nav>
                 </Navbar.Collapse>
               </Navbar>
-            </div>
-          </div>
-        </header>
-
         {/* 
         <div
           id="head-placeholder"
@@ -108,7 +102,6 @@ const Header = (props) => {
         </div> 
         */}
       </div>
-    </div>
   );
 };
 

@@ -26,14 +26,12 @@ export function SuggestTile(props) {
             src={props.img}
             className="img-thumbnail"
             style={{ backgroundColor: 'transparent', border: 0 }}
-        />
+          />
         <div className={styles.quizText}>
-          {props.children}
-          <div className={styles.buttonWrap}>
+            {props.children}
             <LinkContainer to="/feedback">
-              <Button variant="primary">Submit Suggestion</Button>
+              <Button variant="primary" size="lg">Submit Suggestion</Button>
             </LinkContainer>
-          </div>
         </div>
         </Card.Body>
       </Card>

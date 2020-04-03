@@ -4,10 +4,12 @@ import React from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 
 // styling
-import s from './styles.css';
-import Container from 'react-bootstrap/Container';
+import styles from './styles.css';
 //import { Row, Image, Card, Media, Button, Table } from 'react-bootstrap'; //  Clearfix,
+import Container from 'react-bootstrap/Container';
 import CardDeck from 'react-bootstrap/CardDeck';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 // components
 import QuizTile from '../../components/QuizTile';
@@ -23,13 +25,12 @@ function QuizPage(props) {
     return (
       <Container>
         <div id="page-wrap">
-          <div>
             {/*
               --- Technical difficulties alert ---
               To enable / disable, please set constant at the top of the file to either true or false
             */}
             {SHOW_TECHNICAL_DIFFICULTIES_MESSAGE && (
-              <div className={s.alert}>
+              <div className={styles.alert}>
                 <div className="container">
                   <p>
                     We’re currently experiencing unusually high traffic to
@@ -40,27 +41,21 @@ function QuizPage(props) {
               </div>
             )}
 
-            <div className={s.gray}>
-              <div className="container">
-                <p className={s.tan}>
+            <Row>
+              <Col>
+              <p>
                   We do <strong>citizen science</strong> to learn how the the mind
                   works.{' '}
                   <strong>
                     Pick a game to get started!
                     <br />
                   </strong>
-                  <LinkContainer to="/Feedback">
-                    <strong>Send us feedback</strong>
-                  </LinkContainer>{' '}
-                  about your experience.
                 </p>
-              </div>
-            </div>
-
-            <div className={s.quizbackground}>
-              <div className="container clearfix">
+              </Col>
+                
+            </Row>
                 <a id="quizzes"> </a>
-                  <CardDeck>
+              <CardDeck>
                   {experiments.map(e => (
                     <QuizTile
                       id={e.shortName}
@@ -78,12 +73,8 @@ function QuizPage(props) {
                   >
                     <p>What kind of science would you like to see here?</p>
                   </SuggestTile>
-                  </CardDeck>
-                  
-              </div>
-            </div>
+                </CardDeck>
           </div>
-        </div>
       </Container>
     );
   }

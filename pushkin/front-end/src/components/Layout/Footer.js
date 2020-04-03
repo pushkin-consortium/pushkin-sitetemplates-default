@@ -8,39 +8,34 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 //import * as i from 'react-social-icons';
-import { Col } from 'react-bootstrap';
-import s from './Footer.css';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+// import s from './Footer.css';
 import { CONFIG } from '../../config';
 
-class Footer extends React.Component {
+class Footer extends Component {
   render() {
     return (
-      <div className={s.fixFooter}>
         <footer id="footer">
-          <div className={s.footer}>
-            <div className="container">
-              <Col className={s.vert}>
-                <div className={s.leftal}>
-                  © 2019 {CONFIG.whoAmI}. All rights reserved.
+            <Row>
+              <Col>
+              <div>
+                  © 2020 {CONFIG.whoAmI}. All rights reserved.
                 </div>
-                <div className={s.rightal}>
-                  <LinkContainer to="/feedback">
+                    <LinkContainer to="/feedback">
                     <strong>Leave feedback</strong>
                   </LinkContainer>
                   &nbsp; - &nbsp;
                   <a href={`mailto:` + CONFIG.email} target="_blank">
                     <strong>Media inquiries</strong>
                   </a>
-                </div>
-              </Col>
-            </div>
-          </div>
+                </Col>
+              </Row>
         </footer>
-      </div>
     );
   }
 }

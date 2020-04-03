@@ -7,6 +7,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import styles from './styles.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
 //import PropTypes from 'prop-types';
 
 //Other
@@ -78,7 +79,7 @@ class QuizTile extends Component {
               style={{ backgroundColor: 'transparent', border: 0 }}
             />
             <LinkContainer to={'/quizzes/' + this.props.id}>
-              <Button variant="primary" style={{ marginTop: 20 }}>Play</Button>
+              <Button variant="primary" size="lg">Play</Button>
             </LinkContainer>
             
             <div className={styles.quizText}>
@@ -97,6 +98,7 @@ class QuizTile extends Component {
                 <p> {this.state.count} players so far! </p>
               )}
               
+              <Row style={{marginTop: 0}}>
               <i.SocialIcon
                   url={share.facebook}
                   onClick={e => {
@@ -120,6 +122,7 @@ class QuizTile extends Component {
                   style={{ height: 30, width: 30 }}
                   target="_blank"
                 />
+              </Row>
             </div>
 
             {/* BETA ribbon */}
