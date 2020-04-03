@@ -5,7 +5,6 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 //Styling
 import styles from './styles.css';
-import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 //import PropTypes from 'prop-types';
@@ -68,86 +67,72 @@ class QuizTile extends Component {
     };
 
     return (
-      <Col xs={12} sm={6} md={6}>
-        <div>
-          <Card bsClass={styles.panel}>
-            <Card.Header as="h4">
-              <div className={styles.headerpadding}>
-                <a className={styles.title}>{this.props.title}</a>
-              </div>
-            </Card.Header>
-            <Card.Body className={styles.quizbox}>
-              <div className={styles.quizImgWrap}>
-                <LinkContainer to={'/quizzes/' + this.props.id}>
-                  <Card.Img
-                    src={this.props.img}
-                    className="img-thumbnail"
-                    style={{ backgroundColor: 'transparent', border: 0 }}
-                    responsive
-                  />
-                </LinkContainer>
-              </div>
-              <div className={styles.playButton}>
-                <LinkContainer to={'/quizzes/' + this.props.id}>
-                  <Button variant="primary">Play</Button>
-                </LinkContainer>
-              </div>
-              <div className={styles.quizText}>
-                {this.props.children}
-                {this.props.duration && (
-                  <p>
+        <Card bg="light">
+          <Card.Header as="h4">
+              {this.props.title}
+          </Card.Header>
+          <Card.Body>
+            <Card.Img
+              src={this.props.img}
+              className="img-thumbnail"
+              style={{ backgroundColor: 'transparent', border: 0 }}
+            />
+            <LinkContainer to={'/quizzes/' + this.props.id}>
+              <Button variant="primary" style={{ marginTop: 20 }}>Play</Button>
+            </LinkContainer>
+            
+            <div className={styles.quizText}>
+              {this.props.children}
+              {this.props.duration && (
+                <p>
+                  {' '}
+                  <strong>
                     {' '}
-                    <strong>
-                      {' '}
-                      Average time: {this.props.duration} minutes.{' '}
-                    </strong>{' '}
-                  </p>
-                )}
+                    Average time: {this.props.duration} minutes.{' '}
+                  </strong>{' '}
+                </p>
+              )}
 
-                {this.state.count && (
-                  <p> {this.state.count} players so far! </p>
-                )}
-                
-                <div className={styles.pad5} target="_blank">
-                  <i.SocialIcon
-                    url={share.facebook}
-                    onClick={e => {
-                      e.preventDefault();
-                      share.open(share.facebook);
-                    }}
-                    style={{ height: 30, width: 30 }}
-                    target="_blank"
-                  />
-                  <i.SocialIcon
-                    url={share.twitter}
-                    onClick={e => {
-                      e.preventDefault();
-                      share.open(share.twitter);
-                    }}
-                    style={{ height: 30, width: 30 }}
-                    target="_blank"
-                  />
-                  <i.SocialIcon
-                    url={share.email}
-                    style={{ height: 30, width: 30 }}
-                    target="_blank"
-                  />
+              {this.state.count && (
+                <p> {this.state.count} players so far! </p>
+              )}
+              
+              <i.SocialIcon
+                  url={share.facebook}
+                  onClick={e => {
+                    e.preventDefault();
+                    share.open(share.facebook);
+                  }}
+                  style={{ height: 30, width: 30 }}
+                  target="_blank"
+                />
+                <i.SocialIcon
+                  url={share.twitter}
+                  onClick={e => {
+                    e.preventDefault();
+                    share.open(share.twitter);
+                  }}
+                  style={{ height: 30, width: 30 }}
+                  target="_blank"
+                />
+                <i.SocialIcon
+                  url={share.email}
+                  style={{ height: 30, width: 30 }}
+                  target="_blank"
+                />
+            </div>
+
+            {/* BETA ribbon */}
+            {/* {this.props.beta && (
+              <LinkContainer to={'/quizzes/' + this.props.id}>
+                <div className={styles.ribbon + ' ' + styles.ribbonBottomLeft}>
+                  {' '}
+                  <span>BETA</span>{' '}
                 </div>
-              </div>
-              {/* BETA ribbon */}
-              {/* {this.props.beta && (
-                <LinkContainer to={'/quizzes/' + this.props.id}>
-                  <div className={styles.ribbon + ' ' + styles.ribbonBottomLeft}>
-                    {' '}
-                    <span>BETA</span>{' '}
-                  </div>
-                </LinkContainer>
-              )} */}
-            </Card.Body>
-          </Card>
-        </div>
-        <br />
-      </Col>
+              </LinkContainer>
+            )} */}
+          </Card.Body>
+        </Card>
     );
   }
 }
