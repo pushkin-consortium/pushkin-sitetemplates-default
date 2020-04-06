@@ -21,13 +21,13 @@ export function SuggestTile(props) {
         <Card.Header as="h4">
           {props.title}
         </Card.Header>
-        <Card.Body className={styles.quizbox}>
+        <Card.Body>
           <Card.Img
             src={props.img}
             className="img-thumbnail"
             style={{ backgroundColor: 'transparent', border: 0 }}
           />
-        <div className={styles.quizText}>
+        <div>
             {props.children}
             <LinkContainer to="/feedback">
               <Button variant="primary" size="lg">Submit Suggestion</Button>

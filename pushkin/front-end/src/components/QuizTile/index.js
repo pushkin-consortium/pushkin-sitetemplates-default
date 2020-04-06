@@ -8,6 +8,7 @@ import styles from './styles.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 //import PropTypes from 'prop-types';
 
 //Other
@@ -78,11 +79,7 @@ class QuizTile extends Component {
               className="img-thumbnail"
               style={{ backgroundColor: 'transparent', border: 0 }}
             />
-            <LinkContainer to={'/quizzes/' + this.props.id}>
-              <Button variant="primary" size="lg">Play</Button>
-            </LinkContainer>
-            
-            <div className={styles.quizText}>
+            <div>
               {this.props.children}
               {this.props.duration && (
                 <p>
@@ -97,33 +94,37 @@ class QuizTile extends Component {
               {this.state.count && (
                 <p> {this.state.count} players so far! </p>
               )}
-              
-              <Row style={{marginTop: 0}}>
-              <i.SocialIcon
-                  url={share.facebook}
-                  onClick={e => {
-                    e.preventDefault();
-                    share.open(share.facebook);
-                  }}
-                  style={{ height: 30, width: 30 }}
-                  target="_blank"
-                />
-                <i.SocialIcon
-                  url={share.twitter}
-                  onClick={e => {
-                    e.preventDefault();
-                    share.open(share.twitter);
-                  }}
-                  style={{ height: 30, width: 30 }}
-                  target="_blank"
-                />
-                <i.SocialIcon
-                  url={share.email}
-                  style={{ height: 30, width: 30 }}
-                  target="_blank"
-                />
-              </Row>
+              <LinkContainer to={'/quizzes/' + this.props.id}>
+                <Button variant="primary" size="lg">Play</Button>
+              </LinkContainer>
             </div>
+            <Row>
+              <Col>
+              <i.SocialIcon
+                url={share.facebook}
+                onClick={e => {
+                  e.preventDefault();
+                  share.open(share.facebook);
+                }}
+                style={{ height: 30, width: 30 }}
+                target="_blank"
+              />
+              <i.SocialIcon
+                url={share.twitter}
+                onClick={e => {
+                  e.preventDefault();
+                  share.open(share.twitter);
+                }}
+                style={{ height: 30, width: 30 }}
+                target="_blank"
+              />
+              <i.SocialIcon
+                url={share.email}
+                style={{ height: 30, width: 30 }}
+                target="_blank"
+              />
+              </Col>
+            </Row>
 
             {/* BETA ribbon */}
             {/* {this.props.beta && (

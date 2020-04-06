@@ -20,22 +20,22 @@ import { CONFIG } from '../../config';
 class Footer extends Component {
   render() {
     return (
-        <footer id="footer">
-            <Row>
-              <Col>
-              <div>
-                  © 2020 {CONFIG.whoAmI}. All rights reserved.
-                </div>
-                    <LinkContainer to="/feedback">
-                    <strong>Leave feedback</strong>
-                  </LinkContainer>
-                  &nbsp; - &nbsp;
-                  <a href={`mailto:` + CONFIG.email} target="_blank">
-                    <strong>Media inquiries</strong>
-                  </a>
-                </Col>
-              </Row>
-        </footer>
+      <footer id="footer">
+        <Row>
+          <Col>
+            <div>
+                © 2020 {CONFIG.whoAmI}. All rights reserved.
+            </div>
+            <LinkContainer to="/feedback">
+              <strong>Leave feedback</strong>
+            </LinkContainer>
+            &nbsp; - &nbsp;
+            <a href={`mailto:` + CONFIG.email} target="_blank">
+              <strong>Media inquiries</strong>
+            </a>
+          </Col>
+        </Row>
+      </footer>
     );
   }
 }

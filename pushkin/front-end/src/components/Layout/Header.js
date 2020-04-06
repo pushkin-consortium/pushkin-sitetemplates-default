@@ -39,69 +39,69 @@ const Header = (props) => {
   }, [isAuthenticated]);
 
   return (
-          <div>
-              <Navbar bg="dark" variant="dark" expand="lg">
-                <Navbar.Toggle aria-controls="basic-b.Navbar-b.Nav" />
-                <Navbar.Collapse id="basic-b.Navbar-b.Nav">
-                  <Nav className="mr-auto">
-                    <Nav.Item>
-                    <LinkContainer to="/">
-                    <Navbar.Brand>{CONFIG.whoAmI}</Navbar.Brand>
-                  </LinkContainer>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <LinkContainer to="/">
-                        <Nav.Link>Quizzes</Nav.Link>
+    <div>
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar.Toggle aria-controls="basic-b.Navbar-b.Nav" />
+        <Navbar.Collapse id="basic-b.Navbar-b.Nav">
+          <Nav className="mr-auto">
+            <Nav.Item>
+              <LinkContainer to="/">
+                <Navbar.Brand>{CONFIG.whoAmI}</Navbar.Brand>
+              </LinkContainer>
+            </Nav.Item>
+            <Nav.Item>
+              <LinkContainer to="/">
+                <Nav.Link>Quizzes</Nav.Link>
+              </LinkContainer>
+            </Nav.Item>
+            <Nav.Item>
+              <LinkContainer to="/About">
+                <Nav.Link>About</Nav.Link>
+              </LinkContainer>
+            </Nav.Item>
+          </Nav>
+          <Nav className="ml-auto">
+            <Nav.Item>
+              {CONFIG.useAuth ? (
+                  !isAuthenticated ? (
+                    <Fragment>
+                      <Button
+                        onClick={() => loginWithRedirect({})}
+                        variant="outline-success"
+                      >
+                        Login
+                      </Button>
+                    </Fragment>
+                  ) : (
+                    <Fragment>
+                      <LinkContainer to="/Dashboard">
+                        <Nav.Link>Dashboard</Nav.Link>
                       </LinkContainer>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <LinkContainer to="/About">
-                        <Nav.Link>About</Nav.Link>
-                      </LinkContainer>
-                    </Nav.Item>
-                  </Nav>
-                  <Nav className="ml-auto">
-                    <Nav.Item>
-                      {CONFIG.useAuth ? (
-                          !isAuthenticated ? (
-                            <Fragment>
-                              <Button
-                                onClick={() => loginWithRedirect({})}
-                                variant="outline-success"
-                              >
-                                Login
-                              </Button>
-                            </Fragment>
-                          ) : (
-                            <Fragment>
-                              <LinkContainer to="/Dashboard">
-                                <Nav.Link>Dashboard</Nav.Link>
-                              </LinkContainer>
-                              <Button
-                                onClick={() => {
-                                  logout();
-                                  props.dispatch(setUserID(null));
-                                }}
-                              >
-                                Logout
-                              </Button>
-                              <Avatar />
-                            </Fragment>
-                          )
-                       ) : null}
-                    </Nav.Item>
-                  </Nav>
-                </Navbar.Collapse>
-              </Navbar>
-        {/* 
-        <div
-          id="head-placeholder"
-          style={{ paddingBottom: this.state.headerHeight }}
-        >
-          {' '}
-        </div> 
-        */}
-      </div>
+                      <Button
+                        onClick={() => {
+                          logout();
+                          props.dispatch(setUserID(null));
+                        }}
+                      >
+                        Logout
+                      </Button>
+                      <Avatar />
+                    </Fragment>
+                  )
+                ) : null}
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      {/* 
+      <div
+        id="head-placeholder"
+        style={{ paddingBottom: this.state.headerHeight }}
+      >
+        {' '}
+      </div> 
+      */}
+    </div>
   );
 };
 
