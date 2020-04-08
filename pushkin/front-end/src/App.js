@@ -4,7 +4,8 @@ import { Route, withRouter } from 'react-router-dom';
 
 //import custom front-end stuff
 //import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.scss';
 
 //import page components
 import HeaderContainer from './components/Layout/Header';
