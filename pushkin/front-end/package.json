@@ -9,6 +9,7 @@
     "husky": "^3.0.9",
     "js-cookie": "^2.2.1",
     "lint-staged": "^9.4.2",
+    "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
     "pushkin-client": "^1.2.0",
