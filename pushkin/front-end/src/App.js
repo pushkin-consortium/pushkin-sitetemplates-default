@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 
 //import page components
-import HeaderContainer from './components/Layout/Header';
+import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import TakeQuiz from './components/QuizTile/TakeQuiz';
 
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <HeaderContainer />
+      <Header />
       <Route exact path="/" component={homePage} />
       <Route exact path="/index" component={homePage} />
       <Route exact path="/index.html" component={homePage} />

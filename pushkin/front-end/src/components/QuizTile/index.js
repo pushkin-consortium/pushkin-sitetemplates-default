@@ -4,11 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 
 //Styling
-import styles from './styles.css';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 //import PropTypes from 'prop-types';
 
 //Other
@@ -69,65 +65,57 @@ class QuizTile extends Component {
     };
 
     return (
-        <Card bg="light">
-          <Card.Header as="h4">
-              {this.props.title}
-          </Card.Header>
-          <Card.Body>
-            <Card.Img
-              src={this.props.img}
-              className="img-thumbnail"
-              style={{ backgroundColor: 'transparent', border: 0 }}
-            />
-            <div>
-              {this.props.children}
-              {this.props.duration && (
-                <p>
+      <Card>
+        <Card.Body>
+          <Card.Img variant="top" src={this.props.img} />
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>
+            {this.props.children}
+            {this.props.duration && (
+              <p>
+                {' '}
+                <strong>
                   {' '}
-                  <strong>
-                    {' '}
-                    Average time: {this.props.duration} minutes.{' '}
-                  </strong>{' '}
-                </p>
-              )}
+                  Average time: {this.props.duration} minutes.{' '}
+                </strong>{' '}
+              </p>
+            )}
 
-              {this.state.count && (
-                <p> {this.state.count} players so far! </p>
-              )}
-              <LinkContainer to={'/quizzes/' + this.props.id}>
-                <Button variant="primary" size="lg">Play</Button>
-              </LinkContainer>
-            </div>
-            <Row>
-              <Col>
-              <i.SocialIcon
-                url={share.facebook}
-                onClick={e => {
-                  e.preventDefault();
-                  share.open(share.facebook);
-                }}
-                style={{ height: 30, width: 30 }}
-                target="_blank"
-              />
-              <i.SocialIcon
-                url={share.twitter}
-                onClick={e => {
-                  e.preventDefault();
-                  share.open(share.twitter);
-                }}
-                style={{ height: 30, width: 30 }}
-                target="_blank"
-              />
-              <i.SocialIcon
-                url={share.email}
-                style={{ height: 30, width: 30 }}
-                target="_blank"
-              />
-              </Col>
-            </Row>
+            {this.state.count && <p> {this.state.count} players so far! </p>}
+            <LinkContainer to={'/quizzes/' + this.props.id}>
+              <Button className="font-weight-bold" variant="primary" size="lg">
+                Play
+              </Button>
+            </LinkContainer>
+          </Card.Text>
+          <div>
+            <i.SocialIcon
+              url={share.facebook}
+              onClick={e => {
+                e.preventDefault();
+                share.open(share.facebook);
+              }}
+              style={{ height: 30, width: 30 }}
+              target="_blank"
+            />
+            <i.SocialIcon
+              url={share.twitter}
+              onClick={e => {
+                e.preventDefault();
+                share.open(share.twitter);
+              }}
+              style={{ height: 30, width: 30 }}
+              target="_blank"
+            />
+            <i.SocialIcon
+              url={share.email}
+              style={{ height: 30, width: 30 }}
+              target="_blank"
+            />
+          </div>
 
-            {/* BETA ribbon */}
-            {/* {this.props.beta && (
+          {/* BETA ribbon */}
+          {/* {this.props.beta && (
               <LinkContainer to={'/quizzes/' + this.props.id}>
                 <div className={styles.ribbon + ' ' + styles.ribbonBottomLeft}>
                   {' '}
@@ -135,8 +123,8 @@ class QuizTile extends Component {
                 </div>
               </LinkContainer>
             )} */}
-          </Card.Body>
-        </Card>
+        </Card.Body>
+      </Card>
     );
   }
 }

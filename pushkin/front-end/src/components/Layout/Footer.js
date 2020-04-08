@@ -12,8 +12,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 //import * as i from 'react-social-icons';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Row, Col } from 'react-bootstrap';
 // import s from './Footer.css';
 import { CONFIG } from '../../config';
 
@@ -23,9 +22,7 @@ class Footer extends Component {
       <footer id="footer">
         <Row>
           <Col>
-            <div>
-                © 2020 {CONFIG.whoAmI}. All rights reserved.
-            </div>
+            <div>© 2020 {CONFIG.whoAmI}. All rights reserved.</div>
             <LinkContainer to="/feedback">
               <strong>Leave feedback</strong>
             </LinkContainer>

@@ -4,10 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 //import PropTypes from 'prop-types';
 
 //Styling
-import styles from './styles.css';
-//import { Row, Col, Image, Card, Media, Button, Table } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { Card, Button } from 'react-bootstrap';
 
 //unneeded imports?
 //import * as f from 'react-foundation';
@@ -17,24 +14,20 @@ import Button from 'react-bootstrap/Button';
 
 export function SuggestTile(props) {
   return (
-      <Card bg="light">
-        <Card.Header as="h4">
-          {props.title}
-        </Card.Header>
-        <Card.Body>
-          <Card.Img
-            src={props.img}
-            className="img-thumbnail"
-            style={{ backgroundColor: 'transparent', border: 0 }}
-          />
-        <div>
-            {props.children}
-            <LinkContainer to="/feedback">
-              <Button variant="primary" size="lg">Submit Suggestion</Button>
-            </LinkContainer>
-        </div>
-        </Card.Body>
-      </Card>
+    <Card>
+      <Card.Body>
+        <Card.Img variant="top" src={props.img} />
+        <Card.Title>{props.title}</Card.Title>
+        <Card.Text>
+          {props.children}
+          <LinkContainer to="/feedback">
+            <Button className="font-weight-bold" variant="primary" size="lg">
+              Submit Suggestion
+            </Button>
+          </LinkContainer>
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 }
 
