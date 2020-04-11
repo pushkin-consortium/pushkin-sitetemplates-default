@@ -38,14 +38,20 @@ const Header = props => {
   return (
     <div>
       <Navbar className="navbar-dark bg-dark">
+        <LinkContainer to="/">
+          <Navbar.Brand>
+            <img
+              className="ml-2 mr-2"
+              src={require('../../assets/images/NavbarLogo.png')}
+              width="30"
+              height="30"
+            />
+            {CONFIG.whoAmI}
+          </Navbar.Brand>
+        </LinkContainer>
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="mr-auto">
-            <Nav.Item>
-              <LinkContainer to="/">
-                <Navbar.Brand>{CONFIG.whoAmI}</Navbar.Brand>
-              </LinkContainer>
-            </Nav.Item>
             <Nav.Item>
               <LinkContainer to="/">
                 <Nav.Link>Quizzes</Nav.Link>
