@@ -4,7 +4,6 @@ import React from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 
 // styling
-import s from './styles.css';
 //import { Row, Image, Card, Media, Button, Table } from 'react-bootstrap'; //  Clearfix,
 import { Row } from 'react-bootstrap'; //  Clearfix,
 
@@ -21,7 +20,7 @@ function AboutPage(props) {
             To enable / disable, please set constant at the top of the file to either true or false
           */}
           {SHOW_TECHNICAL_DIFFICULTIES_MESSAGE && (
-            <div className={s.alert}>
+            <div>
               <div className="container">
                 <p>
                   We’re currently experiencing unusually high traffic to
@@ -32,9 +31,9 @@ function AboutPage(props) {
             </div>
           )}
 
-          <div className={s.gray}>
+          <div>
             <div className="container">
-              <p className={s.tan}>
+              <p>
                 We do <strong>citizen science</strong> to learn how the the mind
                 works.{' '}
                 <strong>

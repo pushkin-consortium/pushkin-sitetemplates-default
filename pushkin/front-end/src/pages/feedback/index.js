@@ -9,12 +9,11 @@ import {
   Table
 } from 'react-bootstrap';
 import React from 'react';
-import s from './styles.css';
 
 class FeedbackPage extends React.Component {
   render() {
     return (
-      <div id="page-wrap" className={s.nhs}>
+      <div id="page-wrap">
         {/*        <iframe
           className={s.iframe}
           height="1144px"

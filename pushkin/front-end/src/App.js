@@ -5,12 +5,12 @@ import { Route, withRouter } from 'react-router-dom';
 //import custom front-end stuff
 //import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss';
+import './App.css';
 
 //import page components
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
-import TakeQuiz from './components/QuizTile/TakeQuiz';
+import TakeQuiz from './components/Quizzes/TakeQuiz';
 
 //import pages
 import homePage from './pages/home/index';

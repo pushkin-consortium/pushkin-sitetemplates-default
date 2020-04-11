@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 
 //Styling
-import { Card, Button, Row, Col } from 'react-bootstrap';
+import { Card, Button, Row } from 'react-bootstrap';
 //import PropTypes from 'prop-types';
 
 //Other
@@ -65,12 +65,18 @@ class QuizTile extends Component {
     };
 
     return (
-      <Card>
-        <Card.Body>
-          <Card.Img variant="top" src={this.props.img} />
-          <Card.Title>{this.props.title}</Card.Title>
-          <Card.Text>
-            {this.props.children}
+      <Card className="text-white" style={{ backgroundColor: '#90a4ae' }}>
+        <Card.Header as="h5" style={{ backgroundColor: '#607d8b' }}>
+          {this.props.title}
+        </Card.Header>
+        <Card.Body style={{ padding: '2rem' }}>
+          <Card.Img
+            src={this.props.img}
+            style={{ width: '18rem', height: '18rem', objectFit: 'cover' }}
+          />
+          <Card.Text className="mt-3">
+            <Row>How many words do you know? See your results at the end.</Row>
+
             {this.props.duration && (
               <p>
                 {' '}
@@ -82,38 +88,7 @@ class QuizTile extends Component {
             )}
 
             {this.state.count && <p> {this.state.count} players so far! </p>}
-            <LinkContainer to={'/quizzes/' + this.props.id}>
-              <Button className="font-weight-bold" variant="primary" size="lg">
-                Play
-              </Button>
-            </LinkContainer>
           </Card.Text>
-          <div>
-            <i.SocialIcon
-              url={share.facebook}
-              onClick={e => {
-                e.preventDefault();
-                share.open(share.facebook);
-              }}
-              style={{ height: 30, width: 30 }}
-              target="_blank"
-            />
-            <i.SocialIcon
-              url={share.twitter}
-              onClick={e => {
-                e.preventDefault();
-                share.open(share.twitter);
-              }}
-              style={{ height: 30, width: 30 }}
-              target="_blank"
-            />
-            <i.SocialIcon
-              url={share.email}
-              style={{ height: 30, width: 30 }}
-              target="_blank"
-            />
-          </div>
-
           {/* BETA ribbon */}
           {/* {this.props.beta && (
               <LinkContainer to={'/quizzes/' + this.props.id}>
@@ -124,6 +99,36 @@ class QuizTile extends Component {
               </LinkContainer>
             )} */}
         </Card.Body>
+        <Row className="justify-content-center mt-2">
+          <LinkContainer to={'/quizzes/' + this.props.id}>
+            <Button className="btn-danger">Play</Button>
+          </LinkContainer>
+        </Row>
+        <Row className="justify-content-center mt-3 mb-3">
+          <i.SocialIcon
+            url={share.facebook}
+            onClick={e => {
+              e.preventDefault();
+              share.open(share.facebook);
+            }}
+            style={{ height: 30, width: 30 }}
+            target="_blank"
+          />
+          <i.SocialIcon
+            url={share.twitter}
+            onClick={e => {
+              e.preventDefault();
+              share.open(share.twitter);
+            }}
+            style={{ height: 30, width: 30 }}
+            target="_blank"
+          />
+          <i.SocialIcon
+            url={share.email}
+            style={{ height: 30, width: 30 }}
+            target="_blank"
+          />
+        </Row>
       </Card>
     );
   }

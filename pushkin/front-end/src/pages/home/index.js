@@ -4,11 +4,12 @@ import React from 'react';
 // import { LinkContainer } from 'react-router-bootstrap';
 
 // styling
-import { Container, CardDeck, Row, Col, Jumbotron } from 'react-bootstrap';
+import { Container, CardDeck, Card, Jumbotron, Row } from 'react-bootstrap';
 
 // components
-import QuizTile from '../../components/QuizTile';
-import { SuggestTile } from '../../components/SuggestTile';
+import Vocab from '../../components/Quizzes/Vocab';
+import Mind from '../../components/Quizzes/Mind';
+import WhichEnglish from '../../components/Quizzes/WhichEnglish';
 
 // experiments
 import experiments from '../../experiments.js';
@@ -18,8 +19,11 @@ const SHOW_TECHNICAL_DIFFICULTIES_MESSAGE = false;
 function QuizPage(props) {
   if (!props.children) {
     return (
-      <Container>
-        <Jumbotron>
+      <Container className="mt-4">
+        <Jumbotron
+          className="text-white"
+          style={{ backgroundColor: '#607d8b' }}
+        >
           <div>
             We do <strong>citizen science</strong> to learn how the the mind
             works.{' '}
@@ -27,6 +31,7 @@ function QuizPage(props) {
           <div>
             <strong>Pick a game to get started!</strong>
           </div>
+          <div className="mt-3">Feel free to send us feedback HERE.</div>
           {/*
             --- Technical difficulties alert ---
             To enable / disable, please set constant at the top of the file to either true or false
@@ -40,34 +45,22 @@ function QuizPage(props) {
           )}
         </Jumbotron>
         <CardDeck>
-          {/* <a id="quizzes"> </a> */}
-
-          {experiments.map(e => (
-            <QuizTile
-              id={e.shortName}
-              title={e.fullName}
-              duration={e.duration}
-              post={e.tagline}
-              img={require('../../images/' + e.logo)}
-              key="quiztile"
-            >
-              Experiment description here...
-            </QuizTile>
-          ))}
-          <SuggestTile
-            center={true}
-            to="/Feedback"
-            title="Suggest a New Game"
-            img={require('../../images/logo512.png')}
-            key="suggesttile"
-          >
-            What kind of science would you like to see here?
-          </SuggestTile>
-          {/* <Card>
-            <Card.Text>
-              asdf
-            </Card.Text>
-          </Card> */}
+          <Row className="justify-content-between">
+            {experiments.map(e => (
+              <Vocab
+                id={e.shortName}
+                title={e.fullName}
+                duration={e.duration}
+                post={e.tagline}
+                img={require('../../assets/images/Vocab.png')}
+                key="quiztile"
+              />
+            ))}
+            <Mind img={require('../../assets/images/Mind.png')} />
+            <WhichEnglish
+              img={require('../../assets/images/WhichEnglish.png')}
+            />
+          </Row>
         </CardDeck>
       </Container>
     );

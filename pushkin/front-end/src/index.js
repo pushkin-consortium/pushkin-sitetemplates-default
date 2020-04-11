@@ -16,9 +16,9 @@ import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers/index';
 import rootSaga from './sagas/index';
 
-//Stylin
-import './index.css'; // drop??
-import './styles/styles.less'; //Bootstrap styles
+// //Stylin
+// import './index.css'; // drop??
+// import './styles/styles.less'; //Bootstrap styles
 
 //utilities
 //import history from './utils/history';
