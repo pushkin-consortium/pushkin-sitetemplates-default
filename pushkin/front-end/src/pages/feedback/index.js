@@ -1,13 +1,13 @@
-import {
-  Row,
-  Col,
-  Clearfix,
-  Image,
-  Panel,
-  Media,
-  Button,
-  Table
-} from 'react-bootstrap';
+// import {
+//   Row,
+//   Col,
+//   Clearfix,
+//   Image,
+//   Panel,
+//   Media,
+//   Button,
+//   Table
+// } from 'react-bootstrap';
 import React from 'react';
 
 class FeedbackPage extends React.Component {

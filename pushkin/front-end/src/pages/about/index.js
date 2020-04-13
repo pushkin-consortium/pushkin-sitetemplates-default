@@ -1,11 +1,11 @@
 // react imports
 import React from 'react';
 //import PropTypes from 'prop-types';
-import { LinkContainer } from 'react-router-bootstrap';
+//import { LinkContainer } from 'react-router-bootstrap';
 
 // styling
 //import { Row, Image, Card, Media, Button, Table } from 'react-bootstrap'; //  Clearfix,
-import { Row } from 'react-bootstrap'; //  Clearfix,
+import { Container } from 'react-bootstrap'; //  Clearfix,
 
 // components
 const SHOW_TECHNICAL_DIFFICULTIES_MESSAGE = false;
@@ -13,7 +13,7 @@ const SHOW_TECHNICAL_DIFFICULTIES_MESSAGE = false;
 function AboutPage(props) {
   if (!props.children) {
     return (
-      <div id="page-wrap">
+      <Container>
         <div>
           {/*
             --- Technical difficulties alert ---
@@ -44,7 +44,7 @@ function AboutPage(props) {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     );
   }
   return props.children;

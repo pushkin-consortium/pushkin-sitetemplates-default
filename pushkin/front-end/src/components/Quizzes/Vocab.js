@@ -65,16 +65,19 @@ class QuizTile extends Component {
     };
 
     return (
-      <Card className="text-white" style={{ backgroundColor: '#90a4ae' }}>
-        <Card.Header as="h5" style={{ backgroundColor: '#607d8b' }}>
+      <Card
+        className="text-white border-0"
+        style={{ backgroundColor: '#4B515D' }}
+      >
+        <Card.Header className="h5" style={{ backgroundColor: '#3E4551' }}>
           {this.props.title}
         </Card.Header>
         <Card.Body style={{ padding: '2rem' }}>
           <Card.Img
             src={this.props.img}
-            style={{ width: '18rem', height: '18rem', objectFit: 'cover' }}
+            style={{ width: '18.75rem', height: '18rem', objectFit: 'cover' }}
           />
-          <Card.Text className="mt-3">
+          <Card.Text className="mt-4">
             <Row>How many words do you know? See your results at the end.</Row>
 
             {this.props.duration && (

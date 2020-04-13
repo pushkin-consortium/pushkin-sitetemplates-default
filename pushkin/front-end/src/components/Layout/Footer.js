@@ -19,8 +19,7 @@ import { CONFIG } from '../../config';
 class Footer extends Component {
   render() {
     return (
-      <Row className="mt-5" style={{ backgroundColor: '#eceff1' }}>
-        <hr />
+      <Row className="mt-5 text-white" style={{ backgroundColor: '#3E4551' }}>
         <Col>
           <div className="mt-5">
             &copy; {new Date().getFullYear()} {CONFIG.whoAmI}. All rights
@@ -28,11 +27,13 @@ class Footer extends Component {
           </div>
           <div className="mb-5">
             <LinkContainer to="/feedback">
-              <strong>Leave feedback</strong>
+              <a>
+                <strong>Leave Feedback</strong>
+              </a>
             </LinkContainer>
             &nbsp; - &nbsp;
             <a href={`mailto:` + CONFIG.email} target="_blank">
-              <strong>Media inquiries</strong>
+              <strong>Media Inquiries</strong>
             </a>
           </div>
         </Col>

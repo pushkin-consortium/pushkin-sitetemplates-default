@@ -1,10 +1,10 @@
 // react imports
 import React from 'react';
 // //import PropTypes from 'prop-types';
-// import { LinkContainer } from 'react-router-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 // styling
-import { Container, CardDeck, Card, Jumbotron, Row } from 'react-bootstrap';
+import { Container, CardDeck, Jumbotron, Row } from 'react-bootstrap';
 
 // components
 import Vocab from '../../components/Quizzes/Vocab';
@@ -22,7 +22,7 @@ function QuizPage(props) {
       <Container className="mt-4">
         <Jumbotron
           className="text-white"
-          style={{ backgroundColor: '#607d8b' }}
+          style={{ backgroundColor: '#4B515D' }}
         >
           <div>
             We do <strong>citizen science</strong> to learn how the the mind
@@ -31,7 +31,14 @@ function QuizPage(props) {
           <div>
             <strong>Pick a game to get started!</strong>
           </div>
-          <div className="mt-3">Feel free to send us feedback HERE.</div>
+          <div className="mt-3">
+            Feel free to send us feedback{' '}
+            <LinkContainer to="/feedback">
+              <a>
+                <strong>HERE</strong>
+              </a>
+            </LinkContainer>
+          </div>
           {/*
             --- Technical difficulties alert ---
             To enable / disable, please set constant at the top of the file to either true or false
