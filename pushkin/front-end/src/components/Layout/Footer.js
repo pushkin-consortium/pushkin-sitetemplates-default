@@ -19,7 +19,7 @@ import { CONFIG } from '../../config';
 class Footer extends Component {
   render() {
     return (
-      <Row className="mt-5 text-white" style={{ backgroundColor: '#3E4551' }}>
+      <Row className="mt-5" style={{ backgroundColor: '#eeeeee' }}>
         <Col>
           <div className="mt-5">
             &copy; {new Date().getFullYear()} {CONFIG.whoAmI}. All rights

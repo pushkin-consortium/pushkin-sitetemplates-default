@@ -66,17 +66,20 @@ class QuizTile extends Component {
 
     return (
       <Card
-        className="text-white border-0"
-        style={{ backgroundColor: '#4B515D' }}
+        className="border-0"
+        style={{ backgroundColor: '#B7E0F2', borderRadius: 55 }}
       >
-        <Card.Header className="h5" style={{ backgroundColor: '#3E4551' }}>
-          {this.props.title}
-        </Card.Header>
         <Card.Body style={{ padding: '2rem' }}>
           <Card.Img
             src={this.props.img}
             style={{ width: '18.75rem', height: '18rem', objectFit: 'cover' }}
           />
+          <Card.Title
+            className="mt-4"
+            style={{ fontSize: 26, fontWeight: 600 }}
+          >
+            {this.props.title}
+          </Card.Title>
           <Card.Text className="mt-4">
             <Row>How many words do you know? See your results at the end.</Row>
 
@@ -103,8 +106,11 @@ class QuizTile extends Component {
             )} */}
         </Card.Body>
         <Row className="justify-content-center mt-2">
-          <LinkContainer to={'/quizzes/' + this.props.id}>
-            <Button className="btn-danger">Play</Button>
+          <LinkContainer
+            style={{ backgroundColor: '#FF6200', color: 'white', border: 0 }}
+            to={'/quizzes/' + this.props.id}
+          >
+            <Button className="btn-danger">Play Now</Button>
           </LinkContainer>
         </Row>
         <Row className="justify-content-center mt-3 mb-3">
