@@ -42,7 +42,7 @@ const Header = props => {
           <Navbar.Brand>
             <img
               className="ml-2 mr-2"
-              src={require('../../assets/images/NavbarLogo.png')}
+              src={require('../../assets/images/logo/NavbarLogo.png')}
               width="30"
               height="30"
             />

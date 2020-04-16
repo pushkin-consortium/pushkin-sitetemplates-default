@@ -55,13 +55,13 @@ function QuizPage(props) {
                 title={e.fullName}
                 duration={e.duration}
                 post={e.tagline}
-                img={require('../../assets/images/Vocab.png')}
+                img={require('../../assets/images/quiz/Vocab.png')}
                 key="quiztile"
               />
             ))}
-            <Mind img={require('../../assets/images/Mind.png')} />
+            <Mind img={require('../../assets/images/quiz/Mind.png')} />
             <WhichEnglish
-              img={require('../../assets/images/WhichEnglish.png')}
+              img={require('../../assets/images/quiz/WhichEnglish.png')}
             />
           </Row>
         </CardDeck>
