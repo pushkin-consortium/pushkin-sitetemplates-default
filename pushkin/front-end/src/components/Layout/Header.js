@@ -58,7 +58,12 @@ const Header = props => {
               </LinkContainer>
             </Nav.Item>
             <Nav.Item>
-              <LinkContainer to="/About">
+              <LinkContainer to="/findings">
+                <Nav.Link>Findings</Nav.Link>
+              </LinkContainer>
+            </Nav.Item>
+            <Nav.Item>
+              <LinkContainer to="/about">
                 <Nav.Link>About</Nav.Link>
               </LinkContainer>
             </Nav.Item>

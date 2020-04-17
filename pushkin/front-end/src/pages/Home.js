@@ -7,14 +7,12 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Container, CardDeck, Jumbotron, Row } from 'react-bootstrap';
 
 // components
-import Vocab from '../../components/Quizzes/Vocab';
-import Mind from '../../components/Quizzes/Mind';
-import WhichEnglish from '../../components/Quizzes/WhichEnglish';
+import Vocab from '../components/Quizzes/Vocab';
+import Mind from '../components/Quizzes/Mind';
+import WhichEnglish from '../components/Quizzes/WhichEnglish';
 
 // experiments
-import experiments from '../../experiments.js';
-
-const SHOW_TECHNICAL_DIFFICULTIES_MESSAGE = false;
+import experiments from '../experiments.js';
 
 function QuizPage(props) {
   if (!props.children) {
@@ -35,17 +33,6 @@ function QuizPage(props) {
               </a>
             </LinkContainer>
           </div>
-          {/*
-            --- Technical difficulties alert ---
-            To enable / disable, please set constant at the top of the file to either true or false
-          */}
-          {SHOW_TECHNICAL_DIFFICULTIES_MESSAGE && (
-            <p>
-              We’re currently experiencing unusually high traffic to
-              themusiclab.org, which may make it difficult to load our games
-              quickly. Sorry! We hope to have the problem fixed soon.
-            </p>
-          )}
         </Jumbotron>
         <CardDeck>
           <Row className="justify-content-between">
@@ -55,13 +42,13 @@ function QuizPage(props) {
                 title={e.fullName}
                 duration={e.duration}
                 post={e.tagline}
-                img={require('../../assets/images/quiz/Vocab.png')}
+                img={require('../assets/images/quiz/Vocab.png')}
                 key="quiztile"
               />
             ))}
-            <Mind img={require('../../assets/images/quiz/Mind.png')} />
+            <Mind img={require('../assets/images/quiz/Mind.png')} />
             <WhichEnglish
-              img={require('../../assets/images/quiz/WhichEnglish.png')}
+              img={require('../assets/images/quiz/WhichEnglish.png')}
             />
           </Row>
         </CardDeck>

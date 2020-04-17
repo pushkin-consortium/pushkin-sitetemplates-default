@@ -5,21 +5,14 @@ import React from 'react';
 
 // styling
 //import { Row, Image, Card, Media, Button, Table } from 'react-bootstrap'; //  Clearfix,
-import {
-  Container,
-  Row,
-  Image,
-  Card,
-  CardColumns,
-  OverlayTrigger
-} from 'react-bootstrap'; //  Clearfix,
+import { Container, Row, Card, CardColumns } from 'react-bootstrap'; //  Clearfix,
 
 export default function AboutPage(props) {
   if (!props.children) {
     return (
       <Container className="p-0" fluid>
         <Card className="bg-dark text-white">
-          <Card.Img src={require('../../assets/images/AboutUs.jpeg')} />
+          <Card.Img src={require('../assets/images/aboutPage/AboutUs.jpeg')} />
           <Card.ImgOverlay>
             <Card.Title as="h1" style={{ marginTop: '12rem' }}>
               Who We Are
@@ -43,7 +36,7 @@ export default function AboutPage(props) {
               <Card.Body>
                 <Card.Img
                   variant="top"
-                  src={require('../../assets/images/profile/Josh.jpg')}
+                  src={require('../assets/images/profile/Josh.jpg')}
                   style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
                 />
                 <Card.Title
@@ -68,7 +61,7 @@ export default function AboutPage(props) {
             >
               <Card.Body style={{ padding: '2rem' }}>
                 <Card.Img
-                  src={require('../../assets/images/profile/JDL.jpg')}
+                  src={require('../assets/images/profile/JDL.jpg')}
                   style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
                 />
                 <Card.Title
@@ -93,7 +86,7 @@ export default function AboutPage(props) {
               <Card.Body>
                 <Card.Img
                   variant="top"
-                  src={require('../../assets/images/profile/Template.png')}
+                  src={require('../assets/images/profile/Template.png')}
                   style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
                 />
                 <Card.Title
@@ -115,7 +108,7 @@ export default function AboutPage(props) {
             >
               <Card.Body style={{ padding: '2rem' }}>
                 <Card.Img
-                  src={require('../../assets/images/profile/Template.png')}
+                  src={require('../assets/images/profile/Template.png')}
                   style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
                 />
                 <Card.Title
@@ -137,7 +130,7 @@ export default function AboutPage(props) {
             >
               <Card.Body style={{ padding: '2rem' }}>
                 <Card.Img
-                  src={require('../../assets/images/profile/Template.png')}
+                  src={require('../assets/images/profile/Template.png')}
                   style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
                 />
                 <Card.Title
@@ -159,7 +152,7 @@ export default function AboutPage(props) {
             >
               <Card.Body style={{ padding: '2rem' }}>
                 <Card.Img
-                  src={require('../../assets/images/profile/Template.png')}
+                  src={require('../assets/images/profile/Template.png')}
                   style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
                 />
                 <Card.Title

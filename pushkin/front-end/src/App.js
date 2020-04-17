@@ -13,9 +13,10 @@ import Footer from './components/Layout/Footer';
 import TakeQuiz from './components/Quizzes/TakeQuiz';
 
 //import pages
-import homePage from './pages/home/index';
-import aboutPage from './pages/about/index';
-import feedbackPage from './pages/feedback/index';
+import homePage from './pages/Home';
+import findingsPage from './pages/Findings';
+import aboutPage from './pages/About';
+import feedbackPage from './pages/Feedback';
 
 //auth
 import { useAuth0 } from './utils/react-auth0-spa';
@@ -33,9 +34,10 @@ function App() {
       <Route exact path="/" component={homePage} />
       <Route exact path="/index" component={homePage} />
       <Route exact path="/index.html" component={homePage} />
-      <Route exact path="/About" component={aboutPage} />
-      <Route exact path="/Dashboard" component={homePage} />
-      <Route exact path="/Feedback" component={feedbackPage} />
+      <Route exact path="/findings" component={findingsPage} />
+      <Route exact path="/about" component={aboutPage} />
+      <Route exact path="/dashboard" component={homePage} />
+      <Route exact path="/feedback" component={feedbackPage} />
       <Route path="/quizzes/:quizName" component={TakeQuiz} />
       <Footer />
     </div>
