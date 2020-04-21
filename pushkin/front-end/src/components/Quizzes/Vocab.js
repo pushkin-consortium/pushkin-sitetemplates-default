@@ -92,7 +92,7 @@ class QuizTile extends Component {
     };
 
     return (
-      <Card className="border-0" style={styles.card}>
+      <Card className="border-0 shadow" style={styles.card}>
         <Card.Body>
           <Card.Img src={this.props.img} style={styles.cardImage} />
           <Card.Title className="mt-4" style={styles.cardTitle}>

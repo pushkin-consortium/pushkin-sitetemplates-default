@@ -21,7 +21,7 @@ export default function FindingsPage() {
   return (
     <Container fluid>
       <CardGroup className="m-5 d-block">
-        <Card className="m-5 border-0" style={styles.card}>
+        <Card className="m-5 border-0 shadow" style={styles.card}>
           <Row>
             <Col>
               <Card.Img
@@ -46,7 +46,7 @@ export default function FindingsPage() {
             </Col>
           </Row>
         </Card>
-        <Card className="m-5 border-0" style={styles.card}>
+        <Card className="m-5 border-0 shadow" style={styles.card}>
           <Row>
             <Col>
               <Card.Body>
@@ -71,7 +71,7 @@ export default function FindingsPage() {
             </Col>
           </Row>
         </Card>
-        <Card className="m-5 border-0" style={styles.card}>
+        <Card className="m-5 border-0 shadow" style={styles.card}>
           <Row>
             <Col>
               <Card.Img
