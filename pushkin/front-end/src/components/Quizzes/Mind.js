@@ -47,23 +47,41 @@ class Mind extends Component {
       }
     };
 
+    const styles = {
+      card: {
+        backgroundColor: '#B7E0F2',
+        borderRadius: 55,
+        padding: '1rem'
+      },
+      cardImage: {
+        width: '18.75rem',
+        height: '18rem',
+        objectFit: 'cover'
+      },
+      cardTitle: {
+        fontSize: 26,
+        fontWeight: 600
+      },
+      cardButton: {
+        backgroundColor: '#FF6200',
+        color: 'white',
+        border: 0
+      },
+      socialIcon: {
+        height: 30,
+        width: 30,
+        margin: 3
+      }
+    };
+
     return (
-      <Card
-        className="border-0"
-        style={{ backgroundColor: '#B7E0F2', borderRadius: 55 }}
-      >
-        <Card.Body style={{ padding: '2rem' }}>
-          <Card.Img
-            src={this.props.img}
-            style={{ width: '18.75rem', height: '18rem', objectFit: 'cover' }}
-          />
-          <Card.Title
-            className="mt-4"
-            style={{ fontSize: 26, fontWeight: 600 }}
-          >
+      <Card className="border-0" style={styles.card}>
+        <Card.Body>
+          <Card.Img src={this.props.img} style={styles.cardImage} />
+          <Card.Title className="mt-4" style={styles.cardTitle}>
             Mind Reading Quotient
           </Card.Title>
-          <Card.Text className="mt-4">
+          <Card.Text className="mt-4" style={styles.cardText}>
             Forget psychics, all of us have to read minds. We try to figure out
             what people are thinking based on what they say or do. See your
             results at the end.
@@ -71,7 +89,7 @@ class Mind extends Component {
         </Card.Body>
         <Row className="justify-content-center mt-2">
           <LinkContainer
-            style={{ backgroundColor: '#FF6200', color: 'white', border: 0 }}
+            style={styles.cardButton}
             to={'/quizzes/' + this.props.id}
           >
             <Button>Play Now</Button>
@@ -84,7 +102,7 @@ class Mind extends Component {
               e.preventDefault();
               share.open(share.facebook);
             }}
-            style={{ height: 30, width: 30 }}
+            style={styles.socialIcon}
             target="_blank"
           />
           <i.SocialIcon
@@ -93,12 +111,12 @@ class Mind extends Component {
               e.preventDefault();
               share.open(share.twitter);
             }}
-            style={{ height: 30, width: 30 }}
+            style={styles.socialIcon}
             target="_blank"
           />
           <i.SocialIcon
             url={share.email}
-            style={{ height: 30, width: 30 }}
+            style={styles.socialIcon}
             target="_blank"
           />
         </Row>

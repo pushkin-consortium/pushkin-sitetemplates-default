@@ -1,11 +1,7 @@
-// react imports
 import React from 'react';
-//import PropTypes from 'prop-types';
-//import { LinkContainer } from 'react-router-bootstrap';
 
 // styling
-//import { Row, Image, Card, Media, Button, Table } from 'react-bootstrap'; //  Clearfix,
-import { Container, Row, Card, CardDeck } from 'react-bootstrap'; //  Clearfix,
+import { Container, Row, Card, CardDeck } from 'react-bootstrap';
 
 const styles = {
   card: {
@@ -17,17 +13,23 @@ const styles = {
     fontWeight: 600
   },
   cardBody: {
-    padding: '2rem'
+    padding: '2.5rem'
   },
   cardText: {
     textAlign: 'left'
+  },
+  cardImage: {
+    width: '100%',
+    height: '15vw',
+    objectFit: 'cover',
+    borderRadius: 55
   }
 };
 
 export default function AboutPage(props) {
   if (!props.children) {
     return (
-      <Container className="p-0" fluid>
+      <Container className="p-0" fluid style={styles.container}>
         <Card className="bg-dark text-white">
           <Card.Img src={require('../assets/images/aboutPage/AboutUs.jpeg')} />
           <Card.ImgOverlay>
@@ -51,7 +53,7 @@ export default function AboutPage(props) {
                 <Card.Img
                   variant="top"
                   src={require('../assets/images/profile/Josh.jpg')}
-                  style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
+                  style={styles.cardImage}
                 />
                 <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
                   Joshua Hartshorne
@@ -70,7 +72,7 @@ export default function AboutPage(props) {
               <Card.Body style={styles.cardBody}>
                 <Card.Img
                   src={require('../assets/images/profile/JDL.jpg')}
-                  style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
+                  style={styles.cardImage}
                 />
                 <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
                   Joshua R. de Leeuw
@@ -89,7 +91,7 @@ export default function AboutPage(props) {
                 <Card.Img
                   variant="top"
                   src={require('../assets/images/profile/Template.png')}
-                  style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
+                  style={styles.cardImage}
                 />
                 <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
                   Amy Geojo
@@ -107,7 +109,7 @@ export default function AboutPage(props) {
               <Card.Body style={styles.cardBody}>
                 <Card.Img
                   src={require('../assets/images/profile/Template.png')}
-                  style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
+                  style={styles.cardImage}
                 />
                 <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
                   Claire Bonial
@@ -123,7 +125,7 @@ export default function AboutPage(props) {
               <Card.Body style={styles.cardBody}>
                 <Card.Img
                   src={require('../assets/images/profile/Template.png')}
-                  style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
+                  style={styles.cardImage}
                 />
                 <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
                   Laura Germine
@@ -139,7 +141,7 @@ export default function AboutPage(props) {
               <Card.Body style={styles.cardBody}>
                 <Card.Img
                   src={require('../assets/images/profile/Template.png')}
-                  style={{ width: '100%', height: '15vw', objectFit: 'cover' }}
+                  style={styles.cardImage}
                 />
                 <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
                   FirstName LastName
