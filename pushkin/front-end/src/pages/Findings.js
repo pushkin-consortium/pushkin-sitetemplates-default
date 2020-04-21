@@ -9,11 +9,9 @@ const styles = {
     padding: '3rem'
   },
   cardImage: {
-    objectFit: 'contain',
+    height: '100%',
+    objectFit: 'cover',
     borderRadius: 55
-  },
-  cardText: {
-    textAlign: 'left'
   }
 };
 

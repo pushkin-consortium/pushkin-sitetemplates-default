@@ -15,9 +15,6 @@ const styles = {
   cardBody: {
     padding: '2.5rem'
   },
-  cardText: {
-    textAlign: 'left'
-  },
   cardImage: {
     width: '100%',
     height: '15vw',
