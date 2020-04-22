@@ -1,6 +1,13 @@
 import React from 'react';
 
-import { Container, CardGroup, Card, Row, Col } from 'react-bootstrap';
+import {
+  Container,
+  CardGroup,
+  Card,
+  Row,
+  Col,
+  Accordion
+} from 'react-bootstrap';
 
 const styles = {
   card: {
@@ -12,6 +19,16 @@ const styles = {
     height: '100%',
     objectFit: 'cover',
     borderRadius: 55
+  },
+  accordionCollapse: {
+    backgroundColor: 'rgba(0,0,0,0)',
+    marginTop: '2rem',
+    color: '#FF6200',
+    fontWeight: '600',
+    fontSize: 24,
+    border: '0',
+    alignSelf: 'center',
+    cursor: 'pointer'
   }
 };
 
@@ -19,31 +36,44 @@ export default function FindingsPage() {
   return (
     <Container fluid>
       <CardGroup className="m-5 d-block">
-        <Card className="m-5 border-0 shadow" style={styles.card}>
-          <Row>
-            <Col>
-              <Card.Img
-                src={require('../assets/images/findingsPage/EnglishesOfTheWorld.jpg')}
-                style={styles.cardImage}
-              />
-            </Col>
-            <Col>
-              <Card.Body>
-                <Card.Title as="h1">Englishes of the World</Card.Title>
-                <Card.Text as="h4" style={styles.cardText}>
-                  How do your grammar intuitions depend on when and where you
-                  learned English? Participants took a short grammar quiz, which
-                  we are using to understand how grammar differs in different
-                  parts of the English-speaking world (USA, Ireland, Australia,
-                  etc.). We are also investigating how grammar is different for
-                  people who learn English later in life: Do they make different
-                  mistakes if their first language is German as opposed to
-                  Japanese?
-                </Card.Text>
-              </Card.Body>
-            </Col>
-          </Row>
-        </Card>
+        <Accordion defaultActiveKey="0">
+          <Card className="m-5 border-0 shadow" style={styles.card}>
+            <Row>
+              <Col>
+                <Card.Img
+                  src={require('../assets/images/findingsPage/EnglishesOfTheWorld.jpg')}
+                  style={styles.cardImage}
+                />
+              </Col>
+              <Col>
+                <Card.Body>
+                  <Card.Title as="h1">Englishes of the World</Card.Title>
+                  <Card.Text as="h4" style={styles.cardText}>
+                    How do your grammar intuitions depend on when and where you
+                    learned English? Participants took a short grammar quiz,
+                    which we are using to understand how grammar differs in
+                    different parts of the English-speaking world (USA, Ireland,
+                    Australia, etc.).
+                  </Card.Text>
+                  <Accordion.Collapse eventKey="1">
+                    <Card.Text as="h4" style={styles.cardText}>
+                      We are also investigating how grammar is different for
+                      people who learn English later in life: Do they make
+                      different mistakes if their first language is German as
+                      opposed to Japanese?
+                    </Card.Text>
+                  </Accordion.Collapse>
+                  <Accordion.Toggle
+                    eventKey="1"
+                    style={styles.accordionCollapse}
+                  >
+                    Read More
+                  </Accordion.Toggle>
+                </Card.Body>
+              </Col>
+            </Row>
+          </Card>
+        </Accordion>
         <Card className="m-5 border-0 shadow" style={styles.card}>
           <Row>
             <Col>

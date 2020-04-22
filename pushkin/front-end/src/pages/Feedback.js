@@ -1,29 +1,22 @@
-// import {
-//   Row,
-//   Col,
-//   Clearfix,
-//   Image,
-//   Panel,
-//   Media,
-//   Button,
-//   Table
-// } from 'react-bootstrap';
 import React from 'react';
 
-class FeedbackPage extends React.Component {
-  render() {
-    return (
-      <div id="page-wrap">
-        {/*        <iframe
-          className={s.iframe}
-          height="1144px"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSeNolN1L2MuDqAQi8WlEoCEtTPyqXKv81TNRYWH95z09mz-dQ/viewform?embedded=true"
-          frameBorder="0"
-*/}{' '}
-        /> EMBED GOOGLE FORM HERE (SEE /front-end/src/pages/feedback)
-      </div>
-    );
-  }
-}
+import { Container, Row } from 'react-bootstrap';
 
-export default FeedbackPage;
+export default function Feedback() {
+  return (
+    <Container className="mt-5" style={{ height: '70vh' }}>
+      <Row className="justify-content-center">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdrJuL3JFBFOUUUDJKZ9RgNCLx8bkMJvGapM8Hy-85y5dAW9w/viewform?embedded=true"
+          width="640"
+          height="546"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >
+          Loading…
+        </iframe>
+      </Row>
+    </Container>
+  );
+}
