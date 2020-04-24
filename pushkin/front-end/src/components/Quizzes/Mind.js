@@ -54,8 +54,7 @@ class Mind extends Component {
         padding: '1rem'
       },
       cardImage: {
-        width: '18.75rem',
-        height: '18rem',
+        width: '100%',
         objectFit: 'cover'
       },
       cardTitle: {
