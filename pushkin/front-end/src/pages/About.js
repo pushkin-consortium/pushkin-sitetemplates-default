@@ -26,7 +26,7 @@ const styles = {
 export default function AboutPage(props) {
   if (!props.children) {
     return (
-      <Container className="p-0" fluid style={styles.container}>
+      <Container className="p-0" fluid>
         <Card className="bg-dark text-white">
           <Card.Img src={require('../assets/images/aboutPage/AboutUs.jpeg')} />
           <Card.ImgOverlay>
@@ -102,7 +102,15 @@ export default function AboutPage(props) {
             </Card>
           </CardDeck>
           <CardDeck className="mt-5">
-            <Card className="border-0 shadow" style={styles.card}>
+            <Card
+              className="border-0 shadow"
+              style={{
+                backgroundColor: '#B7E0F2',
+                borderRadius: 55,
+                minWidth: '22rem',
+                maxWidth: '22rem'
+              }}
+            >
               <Card.Body style={styles.cardBody}>
                 <Card.Img
                   src={require('../assets/images/profile/Template.png')}
@@ -118,7 +126,15 @@ export default function AboutPage(props) {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card className="border-0 shadow" style={styles.card}>
+            <Card
+              className="border-0 shadow"
+              style={{
+                backgroundColor: '#B7E0F2',
+                borderRadius: 55,
+                minWidth: '22rem',
+                maxWidth: '22rem'
+              }}
+            >
               <Card.Body style={styles.cardBody}>
                 <Card.Img
                   src={require('../assets/images/profile/Template.png')}
@@ -132,18 +148,6 @@ export default function AboutPage(props) {
                   and Neurodevelopmental Genetics Unit at MGH, and the developer
                   of TestMyBrain.org. She collaborated on the Memory Test.
                 </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card className="border-0 shadow" style={styles.card}>
-              <Card.Body style={styles.cardBody}>
-                <Card.Img
-                  src={require('../assets/images/profile/Template.png')}
-                  style={styles.cardImage}
-                />
-                <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
-                  FirstName LastName
-                </Card.Title>
-                <Card.Text style={styles.cardText}>Description Here</Card.Text>
               </Card.Body>
             </Card>
           </CardDeck>
