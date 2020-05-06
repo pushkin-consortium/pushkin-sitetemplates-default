@@ -70,7 +70,7 @@ class WhichEnglish extends Component {
         <Card.Body>
           <Card.Img src={this.props.img} style={styles.cardImage} />
           <Card.Title className="mt-4" style={styles.cardTitle}>
-            Which English?
+            {this.props.title}
           </Card.Title>
           <Card.Text className="mt-4">
             Help us map the grammar of English around the world? See our best

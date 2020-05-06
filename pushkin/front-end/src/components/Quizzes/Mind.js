@@ -78,7 +78,7 @@ class Mind extends Component {
         <Card.Body>
           <Card.Img src={this.props.img} style={styles.cardImage} />
           <Card.Title className="mt-4" style={styles.cardTitle}>
-            Mind Reading Quotient
+            {this.props.title}
           </Card.Title>
           <Card.Text className="mt-4" style={styles.cardText}>
             Forget psychics, all of us have to read minds. We try to figure out

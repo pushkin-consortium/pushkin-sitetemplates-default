@@ -36,20 +36,42 @@ function QuizPage(props) {
         </Jumbotron>
         <CardDeck>
           <Row className="justify-content-between">
-            {experiments.map(e => (
-              <Vocab
-                id={e.shortName}
-                title={e.fullName}
-                duration={e.duration}
-                post={e.tagline}
-                img={require('../assets/images/quiz/Vocab.png')}
-                key="quiztile"
-              />
-            ))}
-            <Mind img={require('../assets/images/quiz/Mind.png')} />
-            <WhichEnglish
-              img={require('../assets/images/quiz/WhichEnglish.png')}
-            />
+            {experiments.map(e => {
+              if (e.shortName === 'vocab') {
+                return (
+                  <Vocab
+                    id={e.shortName}
+                    title={e.fullName}
+                    duration={e.duration}
+                    post={e.tagline}
+                    img={require('../assets/images/quiz/Vocab.png')}
+                    key={e.shortName}
+                  />
+                );
+              } else if (e.shortName === 'mind') {
+                return (
+                  <Mind
+                    id={e.shortName}
+                    title={e.fullName}
+                    duration={e.duration}
+                    post={e.tagline}
+                    img={require('../assets/images/quiz/Mind.png')}
+                    key={e.shortName}
+                  />
+                );
+              } else if (e.shortName === 'whichenglish') {
+                return (
+                  <WhichEnglish
+                    id={e.shortName}
+                    title={e.fullName}
+                    duration={e.duration}
+                    post={e.tagline}
+                    img={require('../assets/images/quiz/WhichEnglish.png')}
+                    key={e.shortName}
+                  />
+                );
+              }
+            })}
           </Row>
         </CardDeck>
       </Container>

@@ -99,18 +99,20 @@ class QuizTile extends Component {
           </Card.Title>
           <Card.Text className="mt-4" style={styles.cardText}>
             <Row>How many words do you know? See your results at the end.</Row>
-
-            {this.props.duration && (
-              <p>
-                {' '}
-                <strong>
+            <Row>
+              {this.props.duration && (
+                <p>
                   {' '}
-                  Average time: {this.props.duration} minutes.{' '}
-                </strong>{' '}
-              </p>
-            )}
-
-            {this.state.count && <p> {this.state.count} players so far! </p>}
+                  <strong>
+                    {' '}
+                    Average time: {this.props.duration} minutes.{' '}
+                  </strong>{' '}
+                </p>
+              )}
+            </Row>
+            <Row>
+              {this.state.count && <p> {this.state.count} players so far! </p>}
+            </Row>
           </Card.Text>
         </Card.Body>
         <Row className="justify-content-center mt-2">
