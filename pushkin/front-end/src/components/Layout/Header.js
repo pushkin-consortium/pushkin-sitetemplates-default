@@ -69,22 +69,26 @@ const Header = props => {
             </Nav.Item>
           </Nav>
           <Nav className="ml-auto">
-            <Nav.Item>
-              {CONFIG.useAuth ? (
-                !isAuthenticated ? (
-                  <Fragment>
+            {CONFIG.useAuth ? (
+              !isAuthenticated ? (
+                <Fragment>
+                  <Nav.Item>
                     <Button
                       onClick={() => loginWithRedirect({})}
                       variant="outline-success"
                     >
                       Login
                     </Button>
-                  </Fragment>
-                ) : (
-                  <Fragment>
-                    <LinkContainer to="/Dashboard">
+                  </Nav.Item>
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <Nav.Item>
+                    <LinkContainer to="/dashboard">
                       <Nav.Link>Dashboard</Nav.Link>
                     </LinkContainer>
+                  </Nav.Item>
+                  <Nav.Item>
                     <Button
                       onClick={() => {
                         logout();
@@ -93,11 +97,11 @@ const Header = props => {
                     >
                       Logout
                     </Button>
-                    <Avatar />
-                  </Fragment>
-                )
-              ) : null}
-            </Nav.Item>
+                  </Nav.Item>
+                  <Avatar />
+                </Fragment>
+              )
+            ) : null}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
