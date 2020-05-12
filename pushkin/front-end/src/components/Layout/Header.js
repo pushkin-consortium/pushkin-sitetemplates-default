@@ -12,7 +12,6 @@ import { Nav, Navbar, Button } from 'react-bootstrap';
 //import * as i from 'react-social-icons';
 //import l from './Layout.css';
 import { LinkContainer } from 'react-router-bootstrap';
-import Avatar from '../Avatar.js';
 
 //other
 import { CONFIG } from '../../config';
@@ -98,7 +97,6 @@ const Header = props => {
                       Logout
                     </Button>
                   </Nav.Item>
-                  <Avatar />
                 </Fragment>
               )
             ) : null}

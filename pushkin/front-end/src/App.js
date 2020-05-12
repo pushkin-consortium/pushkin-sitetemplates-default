@@ -17,6 +17,7 @@ import homePage from './pages/Home';
 import findingsPage from './pages/Findings';
 import aboutPage from './pages/About';
 import feedbackPage from './pages/Feedback';
+import dashboardPage from './pages/Dashboard';
 
 //auth
 import { useAuth0 } from './utils/react-auth0-spa';
@@ -36,7 +37,7 @@ function App() {
       <Route exact path="/index.html" component={homePage} />
       <Route exact path="/findings" component={findingsPage} />
       <Route exact path="/about" component={aboutPage} />
-      <Route exact path="/dashboard" component={homePage} />
+      <Route exact path="/dashboard" component={dashboardPage} />
       <Route exact path="/feedback" component={feedbackPage} />
       <Route path="/quizzes/:quizName" component={TakeQuiz} />
       <Footer />
