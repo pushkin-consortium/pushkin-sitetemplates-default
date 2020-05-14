@@ -96,13 +96,12 @@ const Header = props => {
                     >
                       Logout
                     </Button>
-                  </Nav.Item>
-                  <Nav.Item>
                     <Image
-                      className="ml-2 left rounded"
+                      className="ml-2 left"
                       src={user.picture}
                       width="30"
                       height="30"
+                      roundedCircle
                     />
                   </Nav.Item>
                 </Fragment>
