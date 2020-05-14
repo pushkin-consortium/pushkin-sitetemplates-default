@@ -27,7 +27,7 @@ export default function AboutPage(props) {
   if (!props.children) {
     return (
       <Container className="p-0" fluid>
-        <Card className="bg-dark text-white">
+        <Card className="bg-dark text-white" style={{ borderRadius: 0 }}>
           <Card.Img src={require('../assets/images/aboutPage/AboutUs.jpeg')} />
           <Card.ImgOverlay>
             <Card.Title as="h1" style={{ marginTop: '12rem' }}>
