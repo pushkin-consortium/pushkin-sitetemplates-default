@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { getUser, setUserID } from '../../actions/userInfo';
 
 //styling
-import { Nav, Navbar, Button } from 'react-bootstrap';
+import { Nav, Navbar, Button, Image } from 'react-bootstrap';
 //import * as i from 'react-social-icons';
 //import l from './Layout.css';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -39,8 +39,8 @@ const Header = props => {
       <Navbar className="navbar-dark bg-dark">
         <LinkContainer to="/">
           <Navbar.Brand>
-            <img
-              className="ml-2 mr-2"
+            <Image
+              className="mr-2 left"
               src={require('../../assets/images/logo/NavbarLogo.png')}
               width="30"
               height="30"
@@ -96,6 +96,14 @@ const Header = props => {
                     >
                       Logout
                     </Button>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Image
+                      className="ml-2 left rounded"
+                      src={user.picture}
+                      width="30"
+                      height="30"
+                    />
                   </Nav.Item>
                 </Fragment>
               )
