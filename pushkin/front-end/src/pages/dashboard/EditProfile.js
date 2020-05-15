@@ -8,14 +8,12 @@ const EditProfile = props => {
       <Row>
         <Form>
           <Row>
-            <Form.Group>
-              <Col>
-                <Form.Control placeholder="First name" />
-              </Col>
-              <Col>
-                <Form.Control placeholder="Last name" />
-              </Col>
-            </Form.Group>
+            <Col>
+              <Form.Control placeholder="First name" />
+            </Col>
+            <Col>
+              <Form.Control placeholder="Last name" />
+            </Col>
           </Row>
           <Form.Group>
             <Form.Label>Nickname</Form.Label>

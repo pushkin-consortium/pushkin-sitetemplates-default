@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, Fragment } from 'react';
 
 import EditProfile from './EditProfile';
 import ExperimentHistory from './ExperimentHistory';
@@ -39,6 +39,9 @@ const styles = {
 const Dashboard = () => {
   const { loading, user } = useAuth0();
 
+  const [editProfile, showEditProfile] = useState(false);
+  const [experimentHistory, showExperimentHistory] = useState(true);
+
   if (loading || !user) {
     return <div>Loading...</div>;
   }
@@ -49,18 +52,42 @@ const Dashboard = () => {
         <Image src={user.picture} style={styles.avatar} />
         <h2 className="m-4 text-white">Hello, {user.name}!</h2>
         <Row className="justify-content-center m-1">
-          <Button style={styles.button}>Edit Profile</Button>
-          <Button style={styles.button}>My Recent Experiments</Button>
+          <Button
+            onClick={() => {
+              showEditProfile(editProfile => true);
+              showExperimentHistory(experimentHistory => false);
+            }}
+            style={styles.button}
+          >
+            Edit Profile
+          </Button>
+          <Button
+            onClick={() => {
+              showEditProfile(editProfile => false);
+              showExperimentHistory(experimentHistory => true);
+            }}
+            style={styles.button}
+          >
+            My Recent Experiments
+          </Button>
         </Row>
       </Jumbotron>
 
-      <EditProfile
-        userEmail={user.email}
-        userFirstName={user.given_name}
-        userLastName={user.family_name}
-      />
+      {editProfile && (
+        <Fragment>
+          <EditProfile
+            userEmail={user.email}
+            userFirstName={user.given_name}
+            userLastName={user.family_name}
+          />
+        </Fragment>
+      )}
 
-      <ExperimentHistory />
+      {experimentHistory && (
+        <Fragment>
+          <ExperimentHistory />
+        </Fragment>
+      )}
     </Container>
   );
 };
