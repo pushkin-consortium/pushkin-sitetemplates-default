@@ -4,11 +4,6 @@
     url('https://fonts.google.com/specimen/Slabo+27px') format('truetype');
 }
 
-.App {
-  text-align: center;
-  background-color: white;
-}
-
 body {
   font-family: 'slabo';
   font-size: large;

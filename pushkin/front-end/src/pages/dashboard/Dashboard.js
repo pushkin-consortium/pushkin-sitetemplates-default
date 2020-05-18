@@ -48,7 +48,11 @@ const Dashboard = () => {
 
   return (
     <Container fluid className="m-0 p-0 justify-content-center">
-      <Jumbotron fluid style={styles.jumbotron}>
+      <Jumbotron
+        className="text-center justify-content-center"
+        fluid
+        style={styles.jumbotron}
+      >
         <Image src={user.picture} style={styles.avatar} />
         <h2 className="m-4 text-white">Hello, {user.name}!</h2>
         <Row className="justify-content-center m-1">

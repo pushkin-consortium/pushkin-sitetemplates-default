@@ -34,7 +34,7 @@ const styles = {
 
 export default function FindingsPage() {
   return (
-    <Container fluid>
+    <Container fluid className="text-center">
       <CardGroup className="m-5 d-block">
         <Accordion defaultActiveKey="0">
           <Card className="m-5 border-0 shadow" style={styles.card}>

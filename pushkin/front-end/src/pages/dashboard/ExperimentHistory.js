@@ -9,7 +9,7 @@ import WhichEnglish from '../../components/Quizzes/WhichEnglish';
 const ExperimentHistory = () => {
   return (
     <CardDeck>
-      <Row className="justify-content-between">
+      <Row className="justify-content-between text-center">
         <Vocab
           id="vocab"
           title="vocab"

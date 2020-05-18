@@ -4,7 +4,7 @@ import { Row, Col, Form, Button } from 'react-bootstrap';
 
 const styles = {
   label: {
-    text: 'left'
+    textAlign: 'left'
   }
 };
 
@@ -12,7 +12,7 @@ const EditProfile = props => {
   return (
     <Row>
       <Col md={{ span: 6, offset: 3 }}>
-        <Form>
+        <Form className="justify-content-center">
           <Form.Row>
             <Form.Group as={Col}>
               <Form.Label style={styles.label}>First Name</Form.Label>

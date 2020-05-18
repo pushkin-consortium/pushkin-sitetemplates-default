@@ -26,7 +26,7 @@ const styles = {
 export default function AboutPage(props) {
   if (!props.children) {
     return (
-      <Container className="p-0" fluid>
+      <Container className="p-0 text-center" fluid>
         <Card className="bg-dark text-white" style={{ borderRadius: 0 }}>
           <Card.Img src={require('../assets/images/aboutPage/AboutUs.jpeg')} />
           <Card.ImgOverlay>

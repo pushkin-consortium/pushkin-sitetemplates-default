@@ -17,7 +17,7 @@ import experiments from '../experiments.js';
 function QuizPage(props) {
   if (!props.children) {
     return (
-      <Container className="mt-4">
+      <Container className="mt-4 text-center">
         <Jumbotron style={{ backgroundColor: '#eeeeee' }}>
           <div>
             We do <strong>citizen science</strong> to learn how the mind works.{' '}

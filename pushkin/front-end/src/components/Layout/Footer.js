@@ -9,7 +9,10 @@ import { CONFIG } from '../../config';
 class Footer extends Component {
   render() {
     return (
-      <Row className="mt-5" style={{ backgroundColor: '#eeeeee' }}>
+      <Row
+        className="mt-5 justify-content-center text-center"
+        style={{ backgroundColor: '#eeeeee' }}
+      >
         <Col>
           <div className="mt-5">
             &copy; {new Date().getFullYear()} {CONFIG.whoAmI}. All rights
