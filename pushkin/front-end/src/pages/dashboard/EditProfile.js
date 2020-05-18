@@ -1,38 +1,61 @@
 import React from 'react';
 
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Row, Col, Form, Button } from 'react-bootstrap';
+
+const styles = {
+  label: {
+    text: 'left'
+  }
+};
 
 const EditProfile = props => {
   return (
-    <Container>
-      <Row>
+    <Row>
+      <Col md={{ span: 6, offset: 3 }}>
         <Form>
-          <Row>
-            <Col>
-              <Form.Control placeholder="First name" />
-            </Col>
-            <Col>
-              <Form.Control placeholder="Last name" />
-            </Col>
-          </Row>
+          <Form.Row>
+            <Form.Group as={Col}>
+              <Form.Label style={styles.label}>First Name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="First name"
+                defaultValue={props.userFirstName}
+              />
+            </Form.Group>
+            <Form.Group as={Col}>
+              <Form.Label style={styles.label}>Last Name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Last name"
+                defaultValue={props.userLastName}
+              />
+            </Form.Group>
+          </Form.Row>
           <Form.Group>
-            <Form.Label>Nickname</Form.Label>
-            <Form.Control placeholder="Enter your nickname here" />
+            <Form.Label style={styles.label}>Nickname</Form.Label>
+            <Form.Control type="text" placeholder="Nickname" />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Email</Form.Label>
+            <Form.Label style={styles.label}>
+              Set a subscription email
+            </Form.Label>
             <Form.Control
               type="email"
               placeholder="Enter email"
               defaultValue={props.userEmail}
             />
+            <Form.Control.Feedback type="invalid">
+              Please enter a valid email or leave empty.
+            </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group>
-            <Button type="submit">Submit</Button>
-          </Form.Group>
+          <Button type="submit" onClick={e => e.preventDefault()}>
+            Submit
+          </Button>
         </Form>
-      </Row>
-    </Container>
+      </Col>
+    </Row>
   );
 };
 

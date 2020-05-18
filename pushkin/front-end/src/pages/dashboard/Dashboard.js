@@ -47,7 +47,7 @@ const Dashboard = () => {
   }
 
   return (
-    <Container fluid className="m-0 p-0">
+    <Container fluid className="m-0 p-0 justify-content-center">
       <Jumbotron fluid style={styles.jumbotron}>
         <Image src={user.picture} style={styles.avatar} />
         <h2 className="m-4 text-white">Hello, {user.name}!</h2>
@@ -73,21 +73,23 @@ const Dashboard = () => {
         </Row>
       </Jumbotron>
 
-      {editProfile && (
-        <Fragment>
-          <EditProfile
-            userEmail={user.email}
-            userFirstName={user.given_name}
-            userLastName={user.family_name}
-          />
-        </Fragment>
-      )}
+      <Container>
+        {editProfile && (
+          <Fragment>
+            <EditProfile
+              userEmail={user.email}
+              userFirstName={user.given_name}
+              userLastName={user.family_name}
+            />
+          </Fragment>
+        )}
 
-      {experimentHistory && (
-        <Fragment>
-          <ExperimentHistory />
-        </Fragment>
-      )}
+        {experimentHistory && (
+          <Fragment>
+            <ExperimentHistory />
+          </Fragment>
+        )}
+      </Container>
     </Container>
   );
 };
