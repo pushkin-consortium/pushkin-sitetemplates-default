@@ -7,9 +7,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Container, CardDeck, Jumbotron, Row } from 'react-bootstrap';
 
 // components
-import Vocab from '../components/Quizzes/Vocab';
-import Mind from '../components/Quizzes/Mind';
-import WhichEnglish from '../components/Quizzes/WhichEnglish';
+import QuizTile from '../components/Quizzes/QuizTile';
 
 // experiments
 import experiments from '../experiments.js';
@@ -37,40 +35,16 @@ function QuizPage(props) {
         <CardDeck>
           <Row className="justify-content-between">
             {experiments.map(e => {
-              if (e.shortName === 'vocab') {
-                return (
-                  <Vocab
-                    id={e.shortName}
-                    title={e.fullName}
-                    duration={e.duration}
-                    post={e.tagline}
-                    img={require('../assets/images/quiz/Vocab.png')}
-                    key={e.shortName}
-                  />
-                );
-              } else if (e.shortName === 'mind') {
-                return (
-                  <Mind
-                    id={e.shortName}
-                    title={e.fullName}
-                    duration={e.duration}
-                    post={e.tagline}
-                    img={require('../assets/images/quiz/Mind.png')}
-                    key={e.shortName}
-                  />
-                );
-              } else if (e.shortName === 'whichenglish') {
-                return (
-                  <WhichEnglish
-                    id={e.shortName}
-                    title={e.fullName}
-                    duration={e.duration}
-                    post={e.tagline}
-                    img={require('../assets/images/quiz/WhichEnglish.png')}
-                    key={e.shortName}
-                  />
-                );
-              }
+              return (
+                <QuizTile
+                  id={e.shortName}
+                  title={e.fullName}
+                  duration={e.duration}
+                  text={e.text}
+                  post={e.tagline}
+                  img={require('../assets/images/quiz/' + e.logo)}
+                />
+              );
             })}
           </Row>
         </CardDeck>

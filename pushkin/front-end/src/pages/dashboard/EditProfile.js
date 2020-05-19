@@ -50,9 +50,11 @@ const EditProfile = props => {
               Please enter a valid email or leave empty.
             </Form.Control.Feedback>
           </Form.Group>
-          <Button type="submit" onClick={e => e.preventDefault()}>
-            Submit
-          </Button>
+          <Row className="justify-content-center">
+            <Button type="submit" onClick={e => e.preventDefault()}>
+              Submit
+            </Button>
+          </Row>
         </Form>
       </Col>
     </Row>
