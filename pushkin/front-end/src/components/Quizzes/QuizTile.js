@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 
-import { Card, Button, Row } from 'react-bootstrap';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 
 //Other
 import { CONFIG } from '../../config';
@@ -82,16 +82,17 @@ class QuizTile extends Component {
     };
 
     return (
-      <Card className="border-0 shadow" style={styles.card}>
-        <Card.Body>
-          <Card.Img src={this.props.img} style={styles.cardImage} />
-          <Card.Title className="mt-4" style={styles.cardTitle}>
-            {this.props.title}
-          </Card.Title>
-          <Card.Text className="mt-4" style={styles.cardText}>
-            {this.props.text}
+      <Col md={4} className="mt-5 d-flex align-items-stretch">
+        <Card className="border-0 shadow" style={styles.card}>
+          <Card.Body>
+            <Card.Img src={this.props.img} style={styles.cardImage} />
+            <Card.Title className="mt-4" style={styles.cardTitle}>
+              {this.props.title}
+            </Card.Title>
+            <Card.Text className="mt-4" style={styles.cardText}>
+              {this.props.text}
 
-            {/* {this.props.duration && (
+              {/* {this.props.duration && (
               <p>
                 {' '}
                 <strong>
@@ -104,42 +105,42 @@ class QuizTile extends Component {
             {this.state.count && (
               <p> {this.state.count} players so far! </p>
             )} */}
-          </Card.Text>
-        </Card.Body>
-        <Row className="justify-content-center mt-2">
-          <LinkContainer
-            style={styles.cardButton}
-            to={'/quizzes/' + this.props.id}
-          >
-            <Button>Play Now</Button>
-          </LinkContainer>
-        </Row>
-        <Row className="justify-content-center mt-3 mb-3">
-          <i.SocialIcon
-            url={share.facebook}
-            onClick={e => {
-              e.preventDefault();
-              share.open(share.facebook);
-            }}
-            style={styles.socialIcon}
-            target="_blank"
-          />
-          <i.SocialIcon
-            url={share.twitter}
-            onClick={e => {
-              e.preventDefault();
-              share.open(share.twitter);
-            }}
-            style={styles.socialIcon}
-            target="_blank"
-          />
-          <i.SocialIcon
-            url={share.email}
-            style={styles.socialIcon}
-            target="_blank"
-          />
-          {/* BETA ribbon */}
-          {/* {this.props.beta && (
+            </Card.Text>
+          </Card.Body>
+          <Row className="justify-content-center mt-2">
+            <LinkContainer
+              style={styles.cardButton}
+              to={'/quizzes/' + this.props.id}
+            >
+              <Button>Play Now</Button>
+            </LinkContainer>
+          </Row>
+          <Row className="justify-content-center mt-3 mb-3">
+            <i.SocialIcon
+              url={share.facebook}
+              onClick={e => {
+                e.preventDefault();
+                share.open(share.facebook);
+              }}
+              style={styles.socialIcon}
+              target="_blank"
+            />
+            <i.SocialIcon
+              url={share.twitter}
+              onClick={e => {
+                e.preventDefault();
+                share.open(share.twitter);
+              }}
+              style={styles.socialIcon}
+              target="_blank"
+            />
+            <i.SocialIcon
+              url={share.email}
+              style={styles.socialIcon}
+              target="_blank"
+            />
+            {/* BETA ribbon */}
+            {/* {this.props.beta && (
             <LinkContainer to={'/quizzes/' + this.props.id}>
               <div className={s.ribbon + ' ' + s.ribbonBottomLeft}>
                 {' '}
@@ -147,8 +148,9 @@ class QuizTile extends Component {
               </div>
             </LinkContainer>
           )} */}
-        </Row>
-      </Card>
+          </Row>
+        </Card>
+      </Col>
     );
   }
 }

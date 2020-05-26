@@ -32,22 +32,20 @@ function QuizPage(props) {
             </LinkContainer>
           </div>
         </Jumbotron>
-        <CardDeck>
-          <Row className="justify-content-between">
-            {experiments.map(e => {
-              return (
-                <QuizTile
-                  id={e.shortName}
-                  title={e.fullName}
-                  duration={e.duration}
-                  text={e.text}
-                  post={e.tagline}
-                  img={require('../assets/images/quiz/' + e.logo)}
-                />
-              );
-            })}
-          </Row>
-        </CardDeck>
+        <Row>
+          {experiments.map(e => {
+            return (
+              <QuizTile
+                id={e.shortName}
+                title={e.fullName}
+                duration={e.duration}
+                text={e.text}
+                post={e.tagline}
+                img={require('../assets/images/quiz/' + e.logo)}
+              />
+            );
+          })}
+        </Row>
       </Container>
     );
   }
