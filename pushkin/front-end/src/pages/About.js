@@ -1,27 +1,10 @@
 import React from 'react';
 
+import people from '../components/TeamMember/People';
+import TeamMember from '../components/TeamMember/TeamMember';
+
 // styling
 import { Container, Row, Card, CardDeck } from 'react-bootstrap';
-
-const styles = {
-  card: {
-    backgroundColor: '#B7E0F2',
-    borderRadius: 55
-  },
-  cardTitle: {
-    fontSize: 26,
-    fontWeight: 600
-  },
-  cardBody: {
-    padding: '2.5rem'
-  },
-  cardImage: {
-    width: '100%',
-    height: '15vw',
-    objectFit: 'cover',
-    borderRadius: 55
-  }
-};
 
 export default function AboutPage(props) {
   if (!props.children) {
@@ -45,6 +28,17 @@ export default function AboutPage(props) {
           </Row>
           <hr />
           <CardDeck className="mt-5">
+            {people.map(p => {
+              return (
+                <TeamMember
+                  name={p.name}
+                  description={p.description}
+                  image={require('../assets/images/teamMember/' + p.image)}
+                />
+              );
+            })}
+          </CardDeck>
+          {/* <CardDeck className="mt-5">
             <Card className="border-0 shadow" style={styles.card}>
               <Card.Body style={styles.cardBody}>
                 <Card.Img
@@ -150,7 +144,7 @@ export default function AboutPage(props) {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </CardDeck>
+          </CardDeck> */}
         </Container>
       </Container>
     );
