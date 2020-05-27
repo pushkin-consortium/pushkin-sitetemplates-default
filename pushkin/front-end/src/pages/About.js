@@ -27,7 +27,7 @@ export default function AboutPage(props) {
             Meet Our Team Members!
           </Row>
           <hr />
-          <CardDeck className="mt-5">
+          <Row>
             {people.map(p => {
               return (
                 <TeamMember
@@ -37,114 +37,7 @@ export default function AboutPage(props) {
                 />
               );
             })}
-          </CardDeck>
-          {/* <CardDeck className="mt-5">
-            <Card className="border-0 shadow" style={styles.card}>
-              <Card.Body style={styles.cardBody}>
-                <Card.Img
-                  variant="top"
-                  src={require('../assets/images/profile/Josh.jpg')}
-                  style={styles.cardImage}
-                />
-                <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
-                  Joshua Hartshorne
-                </Card.Title>
-                <Card.Text style={styles.cardText}>
-                  Joshua Hartshorne is an assistant professor of psychology at
-                  Boston College, and the founder of GamesWithWords.org. He is
-                  hroadly interested in human behavior, with a particular
-                  interest in language and inference. By “inference,” he means
-                  the application of learned information to make predictions
-                  about a novel situation.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card className="border-0 shadow" style={styles.card}>
-              <Card.Body style={styles.cardBody}>
-                <Card.Img
-                  src={require('../assets/images/profile/JDL.jpg')}
-                  style={styles.cardImage}
-                />
-                <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
-                  Joshua R. de Leeuw
-                </Card.Title>
-                <Card.Text style={styles.cardText}>
-                  Josh's research is focused on the development and application
-                  of Internet-based tools for the study of human cognition. He
-                  created the widely-used jsPsych experiment software for
-                  conducting behavioral experiments online. He uses these tools
-                  to study how people learn and represent new information.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card className="border-0 shadow" style={styles.card}>
-              <Card.Body style={styles.cardBody}>
-                <Card.Img
-                  variant="top"
-                  src={require('../assets/images/profile/Template.png')}
-                  style={styles.cardImage}
-                />
-                <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
-                  Amy Geojo
-                </Card.Title>
-                <Card.Text style={styles.cardText}>
-                  Amy Geojo is a graduate student in the Psychology Department
-                  at Harvard University. She collaborated with Josh on the Gorp
-                  Test.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </CardDeck>
-          <CardDeck className="mt-5">
-            <Card
-              className="border-0 shadow"
-              style={{
-                backgroundColor: '#B7E0F2',
-                borderRadius: 55,
-                minWidth: '22rem',
-                maxWidth: '22rem'
-              }}
-            >
-              <Card.Body style={styles.cardBody}>
-                <Card.Img
-                  src={require('../assets/images/profile/Template.png')}
-                  style={styles.cardImage}
-                />
-                <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
-                  Claire Bonial
-                </Card.Title>
-                <Card.Text style={styles.cardText}>
-                  Claire Bonial is a graduate student at the University of
-                  Colorado-Boulder and is a collaborator on the VerbCorner
-                  Project.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card
-              className="border-0 shadow"
-              style={{
-                backgroundColor: '#B7E0F2',
-                borderRadius: 55,
-                minWidth: '22rem',
-                maxWidth: '22rem'
-              }}
-            >
-              <Card.Body style={styles.cardBody}>
-                <Card.Img
-                  src={require('../assets/images/profile/Template.png')}
-                  style={styles.cardImage}
-                />
-                <Card.Title className="mt-4 mb-3" style={styles.cardTitle}>
-                  Laura Germine
-                </Card.Title>
-                <Card.Text style={styles.cardText}>
-                  Laura Germine is a postdoctoral researcher in the Psychiatric
-                  and Neurodevelopmental Genetics Unit at MGH, and the developer
-                  of TestMyBrain.org. She collaborated on the Memory Test.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </CardDeck> */}
+          </Row>
         </Container>
       </Container>
     );

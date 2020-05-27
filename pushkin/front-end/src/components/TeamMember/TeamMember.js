@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 
 const styles = {
   card: {
@@ -24,7 +24,7 @@ const styles = {
 
 const TeamMember = props => {
   return (
-    <Card>
+    <Col md={4} className="mt-5 d-flex align-items-stretch">
       <Card className="border-0 shadow" style={styles.card}>
         <Card.Body style={styles.cardBody}>
           <Card.Img variant="top" src={props.image} style={styles.cardImage} />
@@ -34,7 +34,7 @@ const TeamMember = props => {
           <Card.Text style={styles.cardText}>{props.description}</Card.Text>
         </Card.Body>
       </Card>
-    </Card>
+    </Col>
   );
 };
 
