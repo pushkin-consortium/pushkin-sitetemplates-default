@@ -11,7 +11,10 @@ export default function AboutPage(props) {
     return (
       <Container className="p-0 text-center" fluid>
         <Card className="bg-dark text-white" style={{ borderRadius: 0 }}>
-          <Card.Img src={require('../assets/images/aboutPage/AboutUs.jpeg')} />
+          <Card.Img
+            src={require('../assets/images/aboutPage/AboutUs.jpeg')}
+            style={{ objectFit: 'cover' }}
+          />
           <Card.ImgOverlay>
             <Card.Title as="h1" style={{ marginTop: '12rem' }}>
               Who We Are
@@ -22,6 +25,7 @@ export default function AboutPage(props) {
             <Card.Text as="h4">We are awesome scientists!</Card.Text>
           </Card.ImgOverlay>
         </Card>
+        <br />
         <Container>
           <Row className="h1 mt-5 mb-3 justify-content-center">
             Meet Our Team Members!
