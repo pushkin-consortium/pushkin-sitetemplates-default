@@ -93,18 +93,18 @@ class QuizTile extends Component {
               {this.props.text}
 
               {/* {this.props.duration && (
-              <p>
-                {' '}
-                <strong>
+                <p>
                   {' '}
-                  Average time: {this.props.duration} minutes.{' '}
-                </strong>{' '}
-              </p>
-            )}
+                  <strong>
+                    {' '}
+                    Average time: {this.props.duration} minutes.{' '}
+                  </strong>{' '}
+                </p>
+              )}
 
-            {this.state.count && (
-              <p> {this.state.count} players so far! </p>
-            )} */}
+              {this.state.count && (
+                <p> {this.state.count} players so far! </p>
+              )} */}
             </Card.Text>
           </Card.Body>
           <Row className="justify-content-center mt-2">
@@ -141,13 +141,13 @@ class QuizTile extends Component {
             />
             {/* BETA ribbon */}
             {/* {this.props.beta && (
-            <LinkContainer to={'/quizzes/' + this.props.id}>
-              <div className={s.ribbon + ' ' + s.ribbonBottomLeft}>
-                {' '}
-                <span>BETA</span>{' '}
-              </div>
-            </LinkContainer>
-          )} */}
+              <LinkContainer to={'/quizzes/' + this.props.id}>
+                <div className={s.ribbon + ' ' + s.ribbonBottomLeft}>
+                  {' '}
+                  <span>BETA</span>{' '}
+                </div>
+              </LinkContainer>
+            )} */}
           </Row>
         </Card>
       </Col>

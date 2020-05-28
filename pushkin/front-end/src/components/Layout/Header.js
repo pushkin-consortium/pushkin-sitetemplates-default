@@ -9,9 +9,6 @@ import { getUser, setUserID } from '../../actions/userInfo';
 
 //styling
 import { Nav, Navbar, Button, Image } from 'react-bootstrap';
-//import * as i from 'react-social-icons';
-//import l from './Layout.css';
-import { LinkContainer } from 'react-router-bootstrap';
 
 //other
 import { CONFIG } from '../../config';
@@ -35,90 +32,64 @@ const Header = props => {
   }, [isAuthenticated]);
 
   return (
-    <div>
-      <Navbar className="navbar-dark bg-dark">
-        <LinkContainer to="/">
-          <Navbar.Brand>
-            <Image
-              className="mr-2 left"
-              src={require('../../assets/images/logo/NavbarLogo.png')}
-              width="30"
-              height="30"
-            />
-            {CONFIG.whoAmI}
-          </Navbar.Brand>
-        </LinkContainer>
-        <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Nav className="mr-auto">
-            <Nav.Item>
-              <LinkContainer to="/">
-                <Nav.Link>Quizzes</Nav.Link>
-              </LinkContainer>
-            </Nav.Item>
-            <Nav.Item>
-              <LinkContainer to="/findings">
-                <Nav.Link>Findings</Nav.Link>
-              </LinkContainer>
-            </Nav.Item>
-            <Nav.Item>
-              <LinkContainer to="/about">
-                <Nav.Link>About</Nav.Link>
-              </LinkContainer>
-            </Nav.Item>
-          </Nav>
-          <Nav className="ml-auto">
-            {CONFIG.useAuth ? (
-              !isAuthenticated ? (
-                <Fragment>
-                  <Nav.Item>
-                    <Button
-                      onClick={() => loginWithRedirect({})}
-                      variant="outline-success"
-                    >
-                      Login
-                    </Button>
-                  </Nav.Item>
-                </Fragment>
-              ) : (
-                <Fragment>
-                  <Nav.Item>
-                    <LinkContainer to="/dashboard">
-                      <Nav.Link>Dashboard</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Button
-                      onClick={() => {
-                        logout();
-                        props.dispatch(setUserID(null));
-                      }}
-                    >
-                      Logout
-                    </Button>
-                    <Image
-                      className="ml-2 left"
-                      src={user.picture}
-                      width="30"
-                      height="30"
-                      roundedCircle
-                    />
-                  </Nav.Item>
-                </Fragment>
-              )
-            ) : null}
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      {/* 
-      <div
-        id="head-placeholder"
-        style={{ paddingBottom: this.state.headerHeight }}
-      >
-        {' '}
-      </div> 
-      */}
-    </div>
+    <Navbar className="navbar-dark bg-dark" expand="lg">
+      <Navbar.Brand href="/">
+        <Image
+          className="mr-2 left"
+          src={require('../../assets/images/logo/NavbarLogo.png')}
+          width="30"
+          height="30"
+        />
+        {CONFIG.whoAmI}
+      </Navbar.Brand>
+      <Navbar.Toggle />
+      <Navbar.Collapse>
+        <Nav className="mr-auto">
+          <Nav.Link href="/">Quizzes</Nav.Link>
+          <Nav.Link href="/findings">Findings</Nav.Link>
+          <Nav.Link href="/about">About</Nav.Link>
+        </Nav>
+        <Nav className="ml-auto">
+          {CONFIG.useAuth ? (
+            !isAuthenticated ? (
+              <Fragment>
+                <Nav.Item>
+                  <Button
+                    onClick={() => loginWithRedirect({})}
+                    variant="outline-success"
+                  >
+                    Login
+                  </Button>
+                </Nav.Item>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <Nav.Item>
+                  <Nav.Link>Dashboard</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Button
+                    onClick={() => {
+                      logout();
+                      props.dispatch(setUserID(null));
+                    }}
+                  >
+                    Logout
+                  </Button>
+                  <Image
+                    className="ml-2 left"
+                    src={user.picture}
+                    width="30"
+                    height="30"
+                    roundedCircle
+                  />
+                </Nav.Item>
+              </Fragment>
+            )
+          ) : null}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
