@@ -3,24 +3,22 @@ import React from 'react';
 import FindingsCard from '../components/Findings/FindingsCard';
 import FindingsData from '../components/Findings/FindingsData';
 
-import { Container, CardGroup } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 const FindingsPage = () => {
   return (
     <Container fluid className="text-center">
-      <CardGroup className="m-5 d-block">
-        {FindingsData.map(f => {
-          return (
-            <FindingsCard
-              title={f.title}
-              image={require('../assets/images/findingsPage/' + f.image)}
-              description={f.description}
-              link={f.link}
-              url={f.url}
-            />
-          );
-        })}
-      </CardGroup>
+      {FindingsData.map(f => {
+        return (
+          <FindingsCard
+            title={f.title}
+            image={require('../assets/images/findingsPage/' + f.image)}
+            description={f.description}
+            link={f.link}
+            url={f.url}
+          />
+        );
+      })}
     </Container>
   );
 };

@@ -65,7 +65,7 @@ const Header = props => {
             ) : (
               <Fragment>
                 <Nav.Item>
-                  <Nav.Link>Dashboard</Nav.Link>
+                  <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Button

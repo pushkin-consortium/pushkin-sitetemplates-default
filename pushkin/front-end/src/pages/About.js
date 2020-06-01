@@ -16,10 +16,10 @@ export default function AboutPage(props) {
             style={{ objectFit: 'cover' }}
           />
           <Card.ImgOverlay>
-            <Card.Title as="h1" style={{ marginTop: '12rem' }}>
+            <Card.Title as="h1" style={{ marginTop: '10vw' }}>
               Who We Are
             </Card.Title>
-            <Card.Text as="h4" className="m-5">
+            <Card.Text as="h4" className="m-3">
               We do citizen science to learn how the the mind works.
             </Card.Text>
             <Card.Text as="h4">We are awesome scientists!</Card.Text>
@@ -27,7 +27,7 @@ export default function AboutPage(props) {
         </Card>
         <br />
         <Container>
-          <Row className="h1 mt-5 mb-3 justify-content-center">
+          <Row className="h2 mt-5 mb-3 justify-content-center">
             Meet Our Team Members!
           </Row>
           <hr />
