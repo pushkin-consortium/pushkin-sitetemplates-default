@@ -65,6 +65,10 @@ const Header = props => {
             ) : (
               <Fragment>
                 <Nav.Item>
+                  <Nav.Link href="/forum">Forum</Nav.Link>
+                </Nav.Item>
+                <Nav.Item></Nav.Item>
+                <Nav.Item>
                   <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
