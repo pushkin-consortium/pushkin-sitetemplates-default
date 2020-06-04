@@ -2,6 +2,7 @@
 
 import React, { Fragment, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 
 //redux
 import { connect } from 'react-redux';
@@ -33,21 +34,29 @@ const Header = props => {
 
   return (
     <Navbar className="navbar-dark bg-dark" expand="lg">
-      <Navbar.Brand href="/">
-        <Image
-          className="mr-2 left"
-          src={require('../../assets/images/logo/NavbarLogo.png')}
-          width="30"
-          height="30"
-        />
-        {CONFIG.whoAmI}
-      </Navbar.Brand>
+      <LinkContainer to="/">
+        <Navbar.Brand>
+          <Image
+            className="mr-2 left"
+            src={require('../../assets/images/logo/NavbarLogo.png')}
+            width="30"
+            height="30"
+          />
+          {CONFIG.whoAmI}
+        </Navbar.Brand>
+      </LinkContainer>
       <Navbar.Toggle />
       <Navbar.Collapse>
         <Nav className="mr-auto">
-          <Nav.Link href="/">Quizzes</Nav.Link>
-          <Nav.Link href="/findings">Findings</Nav.Link>
-          <Nav.Link href="/about">About</Nav.Link>
+          <LinkContainer to="/">
+            <Nav.Link>Quizzes</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/findings">
+            <Nav.Link>Findings</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="about">
+            <Nav.Link>About</Nav.Link>
+          </LinkContainer>
         </Nav>
         <Nav className="ml-auto">
           {CONFIG.useAuth ? (
@@ -64,13 +73,12 @@ const Header = props => {
               </Fragment>
             ) : (
               <Fragment>
-                <Nav.Item>
-                  <Nav.Link href="/forum">Forum</Nav.Link>
-                </Nav.Item>
-                <Nav.Item></Nav.Item>
-                <Nav.Item>
-                  <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-                </Nav.Item>
+                <LinkContainer to="/forum">
+                  <Nav.Link>Forum</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/dashboard">
+                  <Nav.Link>Dashboard</Nav.Link>
+                </LinkContainer>
                 <Nav.Item>
                   <Button
                     onClick={() => {
