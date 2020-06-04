@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{ minHeight: '100vh', position: 'relative' }}>
       <Header />
       <Route exact path="/" component={homePage} />
       <Route exact path="/index" component={homePage} />
@@ -42,6 +42,7 @@ function App() {
       <Route exact path="/dashboard" component={dashboardPage} />
       <Route exact path="/feedback" component={feedbackPage} />
       <Route path="/quizzes/:quizName" component={TakeQuiz} />
+      <div style={{ height: '150px', marginTop: '3rem' }}></div>
       <Footer />
     </div>
   );

@@ -7,6 +7,7 @@ import { Card, Button, Row, Col } from 'react-bootstrap';
 //Other
 import { CONFIG } from '../../config';
 import * as i from 'react-social-icons';
+import { StyleSheet, css } from 'aphrodite';
 
 class QuizTile extends Component {
   state = {
@@ -36,25 +37,44 @@ class QuizTile extends Component {
         borderRadius: 55,
         padding: '1rem'
       },
+      cardTitle: {
+        fontSize: 26,
+        fontWeight: 600
+      }
+    };
+
+    const hoverStyles = StyleSheet.create({
       cardImage: {
         width: '100%',
         objectFit: 'cover'
       },
-      cardTitle: {
-        fontSize: 26,
-        fontWeight: 600
-      },
       cardButton: {
         backgroundColor: '#FF6200',
         color: 'white',
-        border: 0
+        border: 0,
+        ':hover': {
+          backgroundColor: '#FFAF7D',
+          transition: '0.3s'
+        }
       },
       socialIcon: {
-        height: 30,
-        width: 30,
-        margin: 3
+        height: 40,
+        width: 40,
+        margin: 3,
+        opacity: 1
+      },
+      opacityStyle: {
+        opacity: 1,
+        ':hover': {
+          cursor: 'pointer',
+          opacity: 0.6,
+          transition: '0.3s'
+        }
+      },
+      circleStyle: {
+        borderRadius: '50%'
       }
-    };
+    });
 
     // Generate sharing links
     let url = CONFIG.frontEndURL + `${this.props.id}`;
@@ -85,7 +105,13 @@ class QuizTile extends Component {
       <Col md={4} className="mt-5 d-flex align-items-stretch">
         <Card className="border-0 shadow" style={styles.card}>
           <Card.Body>
-            <Card.Img src={this.props.img} style={styles.cardImage} />
+            <LinkContainer
+              // style={styles.cardButton}
+              to={'/quizzes/' + this.props.id}
+              className={css(hoverStyles.opacityStyle, hoverStyles.circleStyle)}
+            >
+              <Card.Img src={this.props.img} style={styles.cardImage} />
+            </LinkContainer>
             <Card.Title className="mt-4" style={styles.cardTitle}>
               {this.props.title}
             </Card.Title>
@@ -109,10 +135,10 @@ class QuizTile extends Component {
           </Card.Body>
           <Row className="justify-content-center mt-2">
             <LinkContainer
-              style={styles.cardButton}
+              // style={styles.cardButton}
               to={'/quizzes/' + this.props.id}
             >
-              <Button>Play Now</Button>
+              <Button className={css(hoverStyles.cardButton)}>Play Now</Button>
             </LinkContainer>
           </Row>
           <Row className="justify-content-center mt-3 mb-3">
@@ -122,7 +148,7 @@ class QuizTile extends Component {
                 e.preventDefault();
                 share.open(share.facebook);
               }}
-              style={styles.socialIcon}
+              className={css(hoverStyles.socialIcon, hoverStyles.opacityStyle)}
               target="_blank"
             />
             <i.SocialIcon
@@ -131,12 +157,12 @@ class QuizTile extends Component {
                 e.preventDefault();
                 share.open(share.twitter);
               }}
-              style={styles.socialIcon}
+              className={css(hoverStyles.socialIcon, hoverStyles.opacityStyle)}
               target="_blank"
             />
             <i.SocialIcon
               url={share.email}
-              style={styles.socialIcon}
+              className={css(hoverStyles.socialIcon, hoverStyles.opacityStyle)}
               target="_blank"
             />
             {/* BETA ribbon */}

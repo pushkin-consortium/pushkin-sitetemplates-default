@@ -16,7 +16,7 @@ function QuizPage(props) {
   if (!props.children) {
     return (
       <Container className="mt-4 text-center">
-        <Jumbotron style={{ backgroundColor: '#eeeeee' }}>
+        <Jumbotron style={{ backgroundColor: '#eeeeee', marginBottom: '0px' }}>
           <div>
             We do <strong>citizen science</strong> to learn how the mind works.{' '}
           </div>

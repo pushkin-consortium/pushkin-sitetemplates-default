@@ -1,17 +1,8 @@
 import React from 'react';
 import { Card, Row, Col, Button } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const styles = {
-  button: {
-    backgroundColor: 'rgba(0,0,0,0)',
-    marginTop: '2rem',
-    color: '#FF6200',
-    fontWeight: '600',
-    fontSize: 24,
-    border: '0',
-    alignSelf: 'center',
-    cursor: 'pointer'
-  },
   card: {
     backgroundColor: '#B7E0F2',
     borderRadius: 55,
@@ -25,16 +16,16 @@ const styles = {
     borderRadius: 55
   },
   cardTitle: {
-    fontSize: '2.75vmax'
+    fontSize: '4vmin'
   },
   cardText: {
-    fontSize: '1.7vmax'
+    fontSize: '2.5vmin'
   }
 };
 
 const FindingsCard = props => {
   return (
-    <Card className="m-5 border-0 shadow" style={styles.card}>
+    <Card className="mt-5 border-0 shadow" style={styles.card}>
       <Row>
         <Col md={5}>
           <Card.Img src={props.image} style={styles.cardImage} />
@@ -45,9 +36,11 @@ const FindingsCard = props => {
             <Card.Text style={styles.cardText}>{props.description}</Card.Text>
           </Card.Body>
           {props.link && (
-            <Button style={styles.button} href={props.url}>
-              Read More
-            </Button>
+            <LinkContainer to={props.url}>
+              <a>
+                <strong>Read more</strong>
+              </a>
+            </LinkContainer>
           )}
         </Col>
       </Row>

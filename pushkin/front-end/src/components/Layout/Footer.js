@@ -10,8 +10,14 @@ class Footer extends Component {
   render() {
     return (
       <Row
-        className="mt-5 justify-content-center text-center"
-        style={{ backgroundColor: '#eeeeee' }}
+        className="justify-content-center text-center"
+        style={{
+          backgroundColor: '#eeeeee',
+          width: '100%',
+          margin: '0px',
+          position: 'absolute',
+          bottom: '0'
+        }}
       >
         <Col>
           <div className="mt-5">
