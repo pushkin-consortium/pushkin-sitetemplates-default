@@ -1,4 +1,4 @@
-import { NEXT_PAGE, PROGRESS_PRECENT } from '../actions/nextpage';
+import { NEXT_PAGE, PROGRESS_PRECENT } from '../actions/nextPage';
 
 export default function nextpage(
   state = {
