@@ -73,9 +73,6 @@ const Header = props => {
               </Fragment>
             ) : (
               <Fragment>
-                <LinkContainer to="/forum">
-                  <Nav.Link>Forum</Nav.Link>
-                </LinkContainer>
                 <LinkContainer to="/dashboard">
                   <Nav.Link>Dashboard</Nav.Link>
                 </LinkContainer>
