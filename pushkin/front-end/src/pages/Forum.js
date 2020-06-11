@@ -1,11 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
-import { fetchAllPosts, makePost, search, clearSearch } from '../actions/forum';
 import ForumContent from '../components/Forum/ForumContent';
-import ForumTrendingQuestions from '../components/Forum/ForumTrendingQuestions';
-import QuizForum from '../components/Forum/QuizForum';
-import SearchResultList from '../components/Forum/SearchResultList';
+// import s from './styles.css';
+import { connect } from 'react-redux';
+import { fetchAllPosts, makePost, search, clearSearch } from '../actions/forum';
+// import ForumTrendingQuestions from '../../components/ForumTrendingQuestions/index';
+// import QuizForum from '../../components/QuizForum/index';
+import { Glyphicon, Button } from 'react-bootstrap';
+// import { isAuthenticated, login, checkLogin, getUserInfo } from '../actions/userInfo';
+// import SearchResultList from '../../components/SearchResultList';
+import { Link } from 'react-router';
 
 class Forum extends React.Component {
   constructor(props) {
@@ -13,15 +16,15 @@ class Forum extends React.Component {
     this.state = { isModalOpen: false, posts: null };
   }
   componentDidMount() {
-    this.props.dispatch(fetchAllPosts());
+    // this.props.dispatch(fetchAllPosts());
     // this.props.dispatch(getUserInfo());
   }
   makeForumPost = (post, cb) => {
     this.props.dispatch(makePost(post, cb));
   };
-  // dispatchCheckLogin = () => {
-  //   this.props.dispatch(checkLogin());
-  // };
+  dispatchCheckLogin = () => {
+    // this.props.dispatch(checkLogin());
+  };
   handleLocalPostChange = () => {
     this.props.dispatch(fetchAllPosts()).then(res => {
       this.setState({ posts: res });
@@ -42,19 +45,21 @@ class Forum extends React.Component {
     const { term, results } = this.props;
     const dispatchClearSearch = _ => this.props.dispatch(clearSearch());
     return (
-      <SearchResultList
-        results={results}
-        term={term}
-        clearSearch={dispatchClearSearch}
-      />
+      <div>
+        {/* <SearchResultList
+          results={results}
+          term={term}
+          clearSearch={dispatchClearSearch}
+        /> */}
+      </div>
     );
   };
   showPosts = () => {
     const { forum, userInfo, formData, posts, results } = this.props;
     return (
       <div>
-        <QuizForum
-          user={userInfo}
+        {/* <QuizForum
+          // user={userInfo}
           fromForum
           // isAuthenticated={isAuthenticated}
           makeForumPost={this.makeForumPost}
@@ -62,7 +67,7 @@ class Forum extends React.Component {
           checkLogin={this.dispatchCheckLogin}
           // login={login}
           handleLocalPostChange={this.handleLocalPostChange}
-        />
+        /> */}
         <ForumContent posts={posts} />
       </div>
     );
@@ -74,11 +79,11 @@ class Forum extends React.Component {
         {this.props.children && <div>{this.props.children}</div>}
         {!this.props.children && (
           <div>
-            <div>
+            {/* <div>
               <div>
                 <ForumTrendingQuestions />
               </div>
-            </div>
+            </div> */}
             <div>
               <div>
                 <form onSubmit={this.handleSubmit}>
