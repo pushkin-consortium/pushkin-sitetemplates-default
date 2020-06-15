@@ -2,7 +2,7 @@ import React from 'react';
 import ForumContent from '../components/Forum/ForumContent';
 import { connect } from 'react-redux';
 import { fetchAllPosts, makePost, search, clearSearch } from '../actions/forum';
-// import ForumTrendingQuestions from '../../components/ForumTrendingQuestions/index';
+import ForumTrendingQuestions from '../components/Forum/ForumTrendingQuestions';
 // import QuizForum from '../../components/QuizForum/index';
 import { Row, Col, Form, FormControl, Button } from 'react-bootstrap'; // Bootstrap dropped Glyphicon support
 // import { isAuthenticated, login, checkLogin, getUserInfo } from '../actions/userInfo';
@@ -78,11 +78,11 @@ class Forum extends React.Component {
         {this.props.children && <div>{this.props.children}</div>}
         {!this.props.children && (
           <div md={12}>
-            {/* <div>
+            <div>
               <div>
                 <ForumTrendingQuestions />
               </div>
-            </div> */}
+            </div>
             <Form onSubmit={this.handleSubmit}>
               <Form.Row className="justify-content-center">
                 <Col xs={11}>
