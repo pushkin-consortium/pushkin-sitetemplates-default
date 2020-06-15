@@ -1,23 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // import { Link } from 'react-router';
-// import s from './styles.css';
-// import { Panel } from 'react-bootstrap';
+
+import { Card } from 'react-bootstrap';
+
+const styles = {
+  title: {
+    textTransform: 'capitalize'
+  },
+  card: {
+    margin: '20px 0px',
+    padding: '0px 20px'
+  },
+  quizTag: {
+    width: 'fit-content',
+    background: 'lightblue',
+    padding: '5px',
+    fontSize: '10px',
+    background: 'tomato'
+  }
+};
 
 class ForumContent extends React.Component {
   showAllPosts = () => {
     return this.props.posts.map(post => {
       return (
-        <div key={post.id}>
+        <Card key={post.id} style={styles.card}>
           <div>
             {/* <Link to={`/forum/posts/${post.id}`}> */}
-            <h3>{post.post_subject}</h3>
+            <h3 style={styles.title}>{post.post_subject}</h3>
             {/* </Link> */}
             {post.quiz && <div>{post.quiz}</div>}
-            {!post.quiz && <div style={{ background: 'tomato' }}>general</div>}
+            {!post.quiz && <div style={styles.quizTag}>general</div>}
           </div>
           <hr />
-        </div>
+        </Card>
       );
     });
   };
@@ -25,6 +42,7 @@ class ForumContent extends React.Component {
     return <div>{this.showAllPosts()}</div>;
   }
 }
+
 ForumContent.propTypes = {
   posts: PropTypes.array
 };

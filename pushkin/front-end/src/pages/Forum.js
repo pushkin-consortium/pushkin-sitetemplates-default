@@ -1,30 +1,29 @@
 import React from 'react';
 import ForumContent from '../components/Forum/ForumContent';
-// import s from './styles.css';
 import { connect } from 'react-redux';
 import { fetchAllPosts, makePost, search, clearSearch } from '../actions/forum';
 // import ForumTrendingQuestions from '../../components/ForumTrendingQuestions/index';
 // import QuizForum from '../../components/QuizForum/index';
-import { Glyphicon, Button } from 'react-bootstrap';
+import { Row, Col, Form, FormControl, Button } from 'react-bootstrap'; // Bootstrap dropped Glyphicon support
 // import { isAuthenticated, login, checkLogin, getUserInfo } from '../actions/userInfo';
 // import SearchResultList from '../../components/SearchResultList';
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 
 class Forum extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isModalOpen: false, posts: null };
   }
-  componentDidMount() {
-    // this.props.dispatch(fetchAllPosts());
-    // this.props.dispatch(getUserInfo());
-  }
+  // componentDidMount() {
+  //   this.props.dispatch(fetchAllPosts());
+  //   this.props.dispatch(getUserInfo());
+  // }
   makeForumPost = (post, cb) => {
     this.props.dispatch(makePost(post, cb));
   };
-  dispatchCheckLogin = () => {
-    // this.props.dispatch(checkLogin());
-  };
+  // dispatchCheckLogin = () => {
+  //   this.props.dispatch(checkLogin());
+  // };
   handleLocalPostChange = () => {
     this.props.dispatch(fetchAllPosts()).then(res => {
       this.setState({ posts: res });
@@ -59,13 +58,13 @@ class Forum extends React.Component {
     return (
       <div>
         {/* <QuizForum
-          // user={userInfo}
+          user={userInfo}
           fromForum
-          // isAuthenticated={isAuthenticated}
+          isAuthenticated={isAuthenticated}
           makeForumPost={this.makeForumPost}
           formData={formData}
           checkLogin={this.dispatchCheckLogin}
-          // login={login}
+          login={login}
           handleLocalPostChange={this.handleLocalPostChange}
         /> */}
         <ForumContent posts={posts} />
@@ -75,28 +74,37 @@ class Forum extends React.Component {
   render() {
     const { forum, userInfo, formData, posts, results } = this.props;
     return (
-      <div className="styles_blurb_3jf">
+      <div className="m-5">
         {this.props.children && <div>{this.props.children}</div>}
         {!this.props.children && (
-          <div>
+          <div md={12}>
             {/* <div>
               <div>
                 <ForumTrendingQuestions />
               </div>
             </div> */}
+            <Form onSubmit={this.handleSubmit}>
+              <Form.Row className="justify-content-center">
+                <Col xs={11}>
+                  <FormControl
+                    ref="search"
+                    type="text"
+                    placeholder="Search Forum"
+                  />
+                </Col>
+                <Col xs={1}>
+                  <Button onClick={this.handleSubmit} variant="outline-info">
+                    Search
+                  </Button>
+                </Col>
+              </Form.Row>
+              {/* <a href="#" onClick={this.handleSubmit}>
+                <img style={styles.searchIcon} src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" />
+              </a> */}
+            </Form>
             <div>
-              <div>
-                <form onSubmit={this.handleSubmit}>
-                  <input ref="search" type="text" placeholder="Search Forum" />
-                  <a href="#" onClick={this.handleSubmit}>
-                    <img src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" />
-                  </a>
-                </form>
-              </div>
-              <div>
-                {posts && !results && this.showPosts()}
-                {results && this.showResults()}
-              </div>
+              {posts && !results && this.showPosts()}
+              {results && this.showResults()}
             </div>
           </div>
         )}
