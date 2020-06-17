@@ -1,5 +1,6 @@
 const findingsData = [
   {
+    id: 1,
     title: 'Englishes of the World',
     image: 'EnglishesOfTheWorld.jpg',
     description:
@@ -8,6 +9,7 @@ const findingsData = [
     url: 'https://www.google.com/'
   },
   {
+    id: 2,
     title: 'The king frightened the page because he...',
     image: 'FrightenedKing.jpeg',
     description:
@@ -16,6 +18,7 @@ const findingsData = [
     url: ''
   },
   {
+    id: 3,
     title: 'Birth Order and Love',
     image: 'BirthOrder.jpeg',
     description:

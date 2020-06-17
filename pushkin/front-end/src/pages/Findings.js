@@ -11,6 +11,7 @@ const FindingsPage = () => {
       {FindingsData.map(f => {
         return (
           <FindingsCard
+            key={f.id}
             title={f.title}
             image={require('../assets/images/findingsPage/' + f.image)}
             description={f.description}
