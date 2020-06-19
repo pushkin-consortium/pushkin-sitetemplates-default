@@ -33,9 +33,13 @@ const Header = props => {
   }, [isAuthenticated]);
 
   return (
-    <Navbar className="navbar-dark bg-dark" expand="lg">
+    <Navbar
+      className="navbar-dark bg-dark"
+      expand="lg"
+      style={{ fontSize: '22px' }}
+    >
       <LinkContainer to="/">
-        <Navbar.Brand>
+        <Navbar.Brand style={{ fontSize: '22px' }}>
           <Image
             className="mr-2 left"
             src={require('../../assets/images/logo/NavbarLogo.png')}
