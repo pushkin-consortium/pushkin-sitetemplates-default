@@ -6,6 +6,6 @@ coreDir: 'pushkin'
 databases:
   localtestdb:
     user: 'postgres'
-    pass: ''
+    pass: 'example'
     url: 'localhost'
     name: 'test_db'
