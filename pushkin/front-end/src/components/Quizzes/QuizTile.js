@@ -17,7 +17,7 @@ class QuizTile extends Component {
   //  componentDidMount() {
   // Retrieve participant count
   //    let experimentApi = Axios.create({
-  //      baseURL: CONFIG.apiEndpoint + this.props.id + '/'
+  //      baseURL: CONFIG.apiEndpoint + this.props.quizid + '/'
   //    });
   //    experimentApi
   //      .get('/count?started=true')
@@ -77,7 +77,7 @@ class QuizTile extends Component {
     });
 
     // Generate sharing links
-    let url = CONFIG.frontEndURL + `${this.props.id}`;
+    let url = CONFIG.frontEndURL + `${this.props.quizid}`;
     let subject = CONFIG.citizenScienceWebsite + ` - ${this.props.title}`;
     let text = `${this.props.post}`;
     let hashtags = CONFIG.hashtags;
@@ -93,7 +93,7 @@ class QuizTile extends Component {
       twitter: `https://twitter.com/intent/tweet?url=${url}&hashtags=${hashtags}&text=${text}`,
       email: `mailto:?subject=${subject}&body=${text}`,
 
-      open: function(url) {
+      open: function (url) {
         var left = (window.screen.width - 570) / 2;
         var top = (window.screen.height - 570) / 2;
         var params = `menubar=no,toolbar=no,status=no,width=570,height=570,top=${top},left=${left}`;
@@ -107,7 +107,7 @@ class QuizTile extends Component {
           <Card.Body>
             <LinkContainer
               // style={styles.cardButton}
-              to={'/quizzes/' + this.props.id}
+              to={'/quizzes/' + this.props.quizid}
               className={css(hoverStyles.opacityStyle, hoverStyles.circleStyle)}
             >
               <Card.Img src={this.props.img} style={styles.cardImage} />
@@ -136,7 +136,7 @@ class QuizTile extends Component {
           <Row className="justify-content-center mt-2">
             <LinkContainer
               // style={styles.cardButton}
-              to={'/quizzes/' + this.props.id}
+              to={'/quizzes/' + this.props.quizid}
             >
               <Button className={css(hoverStyles.cardButton)}>Play Now</Button>
             </LinkContainer>
@@ -167,7 +167,7 @@ class QuizTile extends Component {
             />
             {/* BETA ribbon */}
             {/* {this.props.beta && (
-              <LinkContainer to={'/quizzes/' + this.props.id}>
+              <LinkContainer to={'/quizzes/' + this.props.quizid}>
                 <div className={s.ribbon + ' ' + s.ribbonBottomLeft}>
                   {' '}
                   <span>BETA</span>{' '}
