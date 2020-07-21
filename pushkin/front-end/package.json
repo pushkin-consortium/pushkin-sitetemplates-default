@@ -23,7 +23,7 @@
     "react-router-dom": "^5.1.2",
     "react-router-redux": "^4.0.8",
     "react-script": "^2.0.5",
-    "react-scripts": "^3.3.0",
+    "react-scripts": "3.4.0",
     "react-social-icons": "^4.1.0",
     "redux": "^4.0.4",
     "redux-form": "^8.3.6",
