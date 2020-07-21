@@ -36,7 +36,7 @@ function QuizPage(props) {
           {experiments.map(e => {
             return (
               <QuizTile
-                key={e.shortName}
+                quizid={e.shortName}
                 title={e.fullName}
                 duration={e.duration}
                 text={e.text}
