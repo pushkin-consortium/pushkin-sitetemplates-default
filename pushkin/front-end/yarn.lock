@@ -1969,9 +1969,9 @@ ajv-errors@^1.0.0:
   integrity sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==
 
 ajv-keywords@^3.1.0, ajv-keywords@^3.4.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.5.1.tgz#b83ca89c5d42d69031f424cad49aada0236c6957"
-  integrity sha512-KWcq3xN8fDjSB+IMoh2VaXVhRI0BBGxoYp3rx7Pkb6z0cFjYR9Q9l4yZqqals0/zsioCmocC5H6UvsGD4MoIBA==
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.5.2.tgz#31f29da5ab6e00d1c2d329acf7b5929614d5014d"
+  integrity sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
 
 ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.2, ajv@^6.5.5:
   version "6.12.3"
@@ -6784,9 +6784,9 @@ lint-staged@^10.2.11:
     stringify-object "^3.3.0"
 
 listr2@^2.1.0:
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/listr2/-/listr2-2.3.5.tgz#ba88ac8317a9839d517052c4cd98f38ec34c1906"
-  integrity sha512-mka3F7Xw/9YhzmO3tJ8fc5uQgvZyA2LShn9qa02k63APLTTmIDHItKNov7VMS01bg7jcx4Stzfvo1e0nolh/bw==
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/listr2/-/listr2-2.4.0.tgz#aadb094f1f16a96bb9c4dc9b9c3e1d24b1709803"
+  integrity sha512-Hj2ECZdAxDkuYFtIKE35PgdMSqMp0muIhJRG5EyV5pOWFEUmKUG+fhfFrvIUNGBQvvi7wQ41eKTxDBisfvDjFQ==
   dependencies:
     chalk "^4.1.0"
     cli-truncate "^2.1.0"
@@ -11039,9 +11039,9 @@ uuid@^3.0.1, uuid@^3.3.2:
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
 uuid@^8.2.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.2.0.tgz#cb10dd6b118e2dada7d0cd9730ba7417c93d920e"
-  integrity sha512-CYpGiFTUrmI6OBMkAdjSDM0k5h8SkkiTP4WAjQgDgNB1S3Ou9VBEvr6q0Kv2H1mMk7IWfxYGpMH5sd5AvcIV2Q==
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.0.tgz#ab738085ca22dc9a8c92725e459b1d507df5d6ea"
+  integrity sha512-fX6Z5o4m6XsXBdli9g7DtWgAx+osMsRRZFKma1mIUsLCz6vRvv+pz5VNbyu9UEDzpMWulZfvpgb/cmDXVulYFQ==
 
 v8-compile-cache@^2.0.3:
   version "2.1.1"
