@@ -1,10 +1,12 @@
 FROM node:latest
-COPY ./build /usr/src/app/build
-COPY ./tempPackages /usr/src/app/tempPackages
-COPY ./dockerStart.sh /usr/src/app
-COPY ./package.json /usr/src/app
-COPY ./yarn.lock /usr/src/app
+
+COPY ./src /usr/src/app/src
+COPY .yalc /usr/src/app/.yalc/
+COPY ./package.json ./yarn.lock ./.babelrc ./yalc.lock ./dockerStart.sh /usr/src/app/
+
 WORKDIR /usr/src/app
-RUN yarn install --production
+RUN yarn install
+RUN yarn build
+
 RUN apt-get update && apt-get install -y netcat
 CMD ["bash", "dockerStart.sh"]

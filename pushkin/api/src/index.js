@@ -12,10 +12,10 @@ api.init()
 		// load in user controllers
 		const controllersFile = path.join(__dirname, 'controllers.json');
 		const controllers = JSON.parse(fs.readFileSync(controllersFile));
-		controllers.forEach(controller => {
-			const mountPath = path.join('/api/', controller.mountPath);
-			const contrModule = require(controller.name);
-			console.log(contrModule);
+		Object.keys(controllers).forEach(controller => {
+			const mountPath = path.join('/api/', controllers[controller]);
+			const contrModule = require(controller);
+			console.log("Mounting ", controller);
 			api.usePushkinController(mountPath, contrModule); //Nests the Express router app for this experiment at the route /api/[exp], where [exp] is the path for the experiment in question.
 		});
 		api.start();
