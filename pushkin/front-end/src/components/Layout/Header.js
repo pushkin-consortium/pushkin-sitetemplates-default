@@ -58,7 +58,7 @@ const Header = props => {
           <LinkContainer to="/findings">
             <Nav.Link>Findings</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="about">
+          <LinkContainer to="/about">
             <Nav.Link>About</Nav.Link>
           </LinkContainer>
         </Nav>
