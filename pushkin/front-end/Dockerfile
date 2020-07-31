@@ -8,7 +8,6 @@ COPY ./package.json ./yarn.lock ./yalc.lock /usr/src/app/
 
 WORKDIR /usr/src/app
 RUN yarn install
-RUN yarn build
 RUN apt-get update && apt-get install -y netcat
 
 CMD yarn start
