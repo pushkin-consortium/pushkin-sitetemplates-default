@@ -6,7 +6,7 @@ import ForumTrendingQuestions from '../components/Forum/ForumTrendingQuestions';
 // import QuizForum from '../../components/QuizForum/index';
 import { Row, Col, Form, FormControl, Button } from 'react-bootstrap'; // Bootstrap dropped Glyphicon support
 // import { isAuthenticated, login, checkLogin, getUserInfo } from '../actions/userInfo';
-// import SearchResultList from '../../components/SearchResultList';
+import SearchResultList from '../components/Forum/SearchResultList';
 // import { Link } from 'react-router';
 
 class Forum extends React.Component {
@@ -14,10 +14,10 @@ class Forum extends React.Component {
     super(props);
     this.state = { isModalOpen: false, posts: null };
   }
-  // componentDidMount() {
-  //   this.props.dispatch(fetchAllPosts());
-  //   this.props.dispatch(getUserInfo());
-  // }
+  componentDidMount() {
+    // this.props.dispatch(fetchAllPosts());
+    // this.props.dispatch(getUserInfo());
+  }
   makeForumPost = (post, cb) => {
     this.props.dispatch(makePost(post, cb));
   };
@@ -45,11 +45,11 @@ class Forum extends React.Component {
     const dispatchClearSearch = _ => this.props.dispatch(clearSearch());
     return (
       <div>
-        {/* <SearchResultList
+        <SearchResultList
           results={results}
           term={term}
           clearSearch={dispatchClearSearch}
-        /> */}
+        />
       </div>
     );
   };
