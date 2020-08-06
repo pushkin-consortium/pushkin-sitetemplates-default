@@ -7,7 +7,7 @@ import ForumTrendingQuestions from '../components/Forum/ForumTrendingQuestions';
 import { Row, Col, Form, FormControl, Button } from 'react-bootstrap'; // Bootstrap dropped Glyphicon support
 // import { isAuthenticated, login, checkLogin, getUserInfo } from '../actions/userInfo';
 import SearchResultList from '../components/Forum/SearchResultList';
-// import { Link } from 'react-router';
+// import { Link } from 'react-router-dom';
 
 class Forum extends React.Component {
   constructor(props) {
