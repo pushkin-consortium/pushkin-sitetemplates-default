@@ -8,5 +8,5 @@ databases:
   localtestdb:
     user: 'postgres'
     pass: 'example'
-    url: 'localhost'
+    url: 'test_db'
     name: 'test_db'
