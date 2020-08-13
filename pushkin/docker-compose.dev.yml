@@ -5,10 +5,9 @@ volumes:
 services:
   api:
     build: ./api
-    environment: {
-      'AMQP_ADDRESS': 'amqp://message-queue:5672'
-      'PORT': 3000
-    }
+    environment: 
+      AMQP_ADDRESS: 'amqp://message-queue:5672'
+      PORT: 3000
     expose:
       - '3000'
     links:
