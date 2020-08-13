@@ -1,11 +1,12 @@
 # main directories relative to project root ('..')
 experimentsDir: 'experiments'
 coreDir: 'pushkin'
+DockerHubID: ''
 
 # databases configs experiments can use
 databases:
   localtestdb:
     user: 'postgres'
     pass: 'example'
-    url: 'localhost'
+    url: 'test_db'
     name: 'test_db'
