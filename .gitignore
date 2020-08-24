@@ -23,5 +23,4 @@ experiments/*
 **/yarn-error.log*
 
 # protected files
-**/config.js
 pushkin.yaml

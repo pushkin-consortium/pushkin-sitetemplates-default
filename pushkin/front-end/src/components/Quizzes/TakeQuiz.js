@@ -2,15 +2,16 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import experiments from '../../experiments.js';
 import { connect } from 'react-redux';
+import CONFIG from '../../config';
 
 const expObject = {};
-experiments.forEach(exp => {
+experiments.forEach((exp) => {
   expObject[exp.shortName] = exp.module;
 });
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    userID: state.userInfo.userID
+    userID: state.userInfo.userID,
   };
 };
 
@@ -20,7 +21,7 @@ class TakeQuiz extends React.Component {
     const QuizComponent = expObject[match.params.quizName];
     return (
       <div>
-        <QuizComponent {...this.props} />
+        <QuizComponent {...this.props} api={CONFIG.apiEndpoint} />
       </div>
     );
   }
