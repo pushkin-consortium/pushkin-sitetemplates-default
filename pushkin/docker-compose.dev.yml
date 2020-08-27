@@ -30,6 +30,7 @@ services:
   server:
     build: ./front-end
     environment:
+      NODE_ENV: 'debug'
       API_PORT: '3000'
     ports:
       - '80:80'
